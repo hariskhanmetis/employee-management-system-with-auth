@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { EmployeeService } from '../services/employee.service';
-import { AuthService } from '../services/auth.service';
 import { Employee } from '../models/employee.model';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EmployeeDialogFormComponent } from '../employee-dialog-form/employee-dialog-form.component';
 import { LogoutDialogComponent } from '../logout-dialog/logout-dialog.component';
@@ -21,7 +20,6 @@ export class EmployeeTableComponent {
     private employeeService: EmployeeService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
-    private authService: AuthService,
     private router: Router
   ) { }
 

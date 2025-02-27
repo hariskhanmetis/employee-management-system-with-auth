@@ -9,7 +9,7 @@ import { map, of } from 'rxjs';
 })
 export class AuthService {
   private APIURL = 'http://localhost:3000/admins';
-  private isLoggedIn = new BehaviorSubject<boolean>(false);
+  public isLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string): Observable<boolean> {
@@ -26,7 +26,6 @@ export class AuthService {
   }
 
   logout(): Observable<void> {
-    console.log('Logout method called');
     this.isLoggedIn.next(false); 
     return of(void 0);
   }

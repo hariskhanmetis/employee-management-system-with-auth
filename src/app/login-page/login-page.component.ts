@@ -35,6 +35,8 @@ export class LoginPageComponent {
         if (success) {
           this.router.navigate(['/employee-table']);
           this.snackBar.open('Login Successful!', 'Close', { duration: 3000 });
+        } else {
+          this.snackBar.open('Please Enter Valid Credentials!', 'Close', { duration: 3000 });
         }
       });
     }
