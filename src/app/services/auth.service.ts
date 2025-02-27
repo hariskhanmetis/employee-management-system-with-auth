@@ -15,8 +15,7 @@ export class AuthService {
     return this.http.get<any[]>(this.APIURL).pipe(
       map(users => {
         const user = users.find(u => u.email === email && u.password === password);
-        if (user) {
-          localStorage.setItem('user', JSON.stringify(user)); 
+        if (user) { 
           this.isLoggedIn.next(true); 
           return true;
         }
@@ -27,9 +26,7 @@ export class AuthService {
 
   logout(): Observable<void> {
     console.log('Logout method called');
-    localStorage.removeItem('user'); 
     this.isLoggedIn.next(false); 
-    console.log('User removed from local storage, updating isLoggedIn state');
     return of(void 0);
   }
   

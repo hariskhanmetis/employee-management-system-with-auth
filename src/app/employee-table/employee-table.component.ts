@@ -23,7 +23,7 @@ export class EmployeeTableComponent {
     public dialog: MatDialog,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) { }
 
   employees: Employee[] = [];
   displayedColumns: string[] = ['id', 'name', 'age', 'category', 'actions'];
@@ -33,14 +33,7 @@ export class EmployeeTableComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
-    this.authService.getAuthState().subscribe(isLoggedIn => {
-      if (!isLoggedIn) {
-        this.snackBar.open('You should log in first!', 'Close', { duration: 3000 });
-        this.router.navigate(['/login']);
-      } else {
-        this.loadUsers();
-      }
-    });
+    this.loadUsers();
   }
 
   ngAfterViewInit(): void {
@@ -110,8 +103,8 @@ export class EmployeeTableComponent {
       if (result) {
         console.log("Logout", result);
         console.log('Logout dialog closed, proceeding with logout');
-        this.snackBar.open('Logout Successful!', 'Close', {duration: 3000});
-        this.router.navigate(['/login']); 
+        this.snackBar.open('Logout Successful!', 'Close', { duration: 3000 });
+        this.router.navigate(['/login']);
       }
       else {
         console.log('Logout cancelled');
