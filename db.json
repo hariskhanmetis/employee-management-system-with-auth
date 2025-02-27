@@ -1,0 +1,79 @@
+{
+    "employees": [
+      {
+        "id": "3249",
+        "name": "Isabella Martinez",
+        "age": 45,
+        "category": "Manager"
+      },
+      {
+        "id": "9023",
+        "name": "Kevin Carter",
+        "age": 33,
+        "category": "Employee"
+      },
+      {
+        "id": "4387",
+        "name": "Laura Simmons",
+        "age": 39,
+        "category": "Manager"
+      },
+      {
+        "id": "6765",
+        "name": "Michael Johnson",
+        "age": 30,
+        "category": "Employee"
+      },
+      {
+        "id": "8891",
+        "name": "Oliver Scott",
+        "age": 26,
+        "category": "Employee"
+      },
+      {
+        "id": "1127",
+        "name": "Paula Rodriguez",
+        "age": 36,
+        "category": "Manager"
+      },
+      {
+        "id": "5904",
+        "name": "Quentin Harris",
+        "age": 29,
+        "category": "Employee"
+      },
+      {
+        "id": "7382",
+        "name": "Rachel Green",
+        "age": 40,
+        "category": "Manager"
+      },
+      {
+        "id": "4551",
+        "name": "Samuel Parker",
+        "age": 32,
+        "category": "Employee"
+      },
+      {
+        "id": "6027",
+        "name": "Tina Brooks",
+        "age": 37,
+        "category": "Manager"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "email": "admin@example.com",
+        "password": "admin123",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "email": "employee@example.com",
+        "password": "employee123",
+        "role": "employee"
+      }
+    ]
+  }
+  

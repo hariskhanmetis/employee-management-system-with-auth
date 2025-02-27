@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 400px;
+    padding: 11px;
+    padding-top: 5px;
+    text-align: left;
+    height: 19rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-title {
+    font-weight: 500;
+    font-size: 23px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-card-actions {
+    margin-left: 7px;
+}
+
+mat-card-header {
+    margin-bottom: 20px;
+}

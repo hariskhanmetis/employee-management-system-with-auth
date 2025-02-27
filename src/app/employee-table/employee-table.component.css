@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 20px; 
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0c0c0c;
+    margin-bottom: 20px; 
+    z-index: 10;
+}
+
+.wrapper {
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    background-color: #ededed;
+  }
+
+mat-icon {
+    cursor: pointer;
+}
+
+.delete-button {
+    color: #f44336;
+    border: none;
+    background-color: transparent;
+}
+
+.edit-button {
+    color: #0077ee;
+    border: none;
+    background-color: transparent;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; 
+}

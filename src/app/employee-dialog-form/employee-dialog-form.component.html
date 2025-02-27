@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit Employee' : 'Add Employee' }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="employeeForm" class="dialog-form">
+    <div class="form-container">
+      <mat-form-field class="small-field" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="name" id="name">
+        <mat-error *ngIf="employeeForm.controls['name'].hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf="employeeForm.controls['name'].hasError('minlength')">Name must be at least 4 characters long</mat-error>
+        <mat-error *ngIf="employeeForm.controls['name'].hasError('pattern')">Name must contain only alphabetic characters</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="small-field" appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" type="number" id="age">
+        <mat-error *ngIf="employeeForm.controls['age'].hasError('required')">Age is required</mat-error>
+        <mat-error *ngIf="employeeForm.controls['age'].hasError('min')">Age must be at least 18</mat-error>
+        <mat-error *ngIf="employeeForm.controls['age'].hasError('max')">Age must be less than 60</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="small-field" appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category" id="category">
+          <mat-option value="Employee">Employee</mat-option>
+          <mat-option value="Manager">Manager</mat-option>
+        </mat-select>
+        <mat-error *ngIf="employeeForm.controls['category'].hasError('required')">Category is required</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="saveEmployee()" [disabled]="!employeeForm.valid">
+    {{ isEditMode ? 'Update Employee' : 'Add Employee' }}
+  </button>
+</mat-dialog-actions>
