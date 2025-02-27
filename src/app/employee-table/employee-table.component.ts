@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EmployeeDialogFormComponent } from '../employee-dialog-form/employee-dialog-form.component';
 import { LogoutDialogComponent } from '../logout-dialog/logout-dialog.component';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-employee-table',
@@ -52,7 +53,7 @@ export class EmployeeTableComponent {
       if (result) {
         this.employeeService.addEmployee(result).subscribe(() => {
           this.loadUsers();
-          this.snackBar.open('User added successfully!', 'Close', { duration: 3000 });
+          this.snackBar.open('User added successfully!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
           console.log("User added successfully!");
         });
       }
@@ -68,7 +69,7 @@ export class EmployeeTableComponent {
       if (result) {
         this.employeeService.updateEmployee(result).subscribe(() => {
           this.loadUsers();
-          this.snackBar.open('User updated successfully!', 'Close', { duration: 3000 });
+          this.snackBar.open('User updated successfully!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
           console.log("Employee updated successfully!");
         });
       }
@@ -76,18 +77,24 @@ export class EmployeeTableComponent {
   }
 
   deleteEmployee(id: string) {
-    if (confirm('Are you sure you want to delete this user?')) {
-      this.employeeService.deleteEmployee(id).subscribe({
-        next: () => {
-          this.loadUsers();
-          this.snackBar.open('User deleted successfully', 'Close', { duration: 3000 });
-        },
-        error: (error) => {
-          console.error('Error deleting employee:', error);
-          this.snackBar.open('Error deleting user. Please try again.', 'Close', { duration: 3000 });
-        }
-      });
-    }
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.employeeService.deleteEmployee(id).subscribe({
+          next: () => {
+            this.loadUsers();
+            this.snackBar.open('User deleted successfully', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+          },
+          error: (error) => {
+            console.error('Error deleting employee:', error);
+            this.snackBar.open('Error deleting user. Please try again.', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+          }
+        });
+      }
+    });
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -101,7 +108,7 @@ export class EmployeeTableComponent {
       if (result) {
         console.log("Logout", result);
         console.log('Logout dialog closed, proceeding with logout');
-        this.snackBar.open('Logout Successful!', 'Close', { duration: 3000 });
+        this.snackBar.open('Logout Successful!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
         this.router.navigate(['/login']);
       }
       else {

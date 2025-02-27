@@ -12,7 +12,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     return true;
   } else {
     router.navigate(['/login']);
-    snackBar.open('You should login first!', 'Close', {duration: 3000});
+    snackBar.open('You should login first!', 'Close', {duration: 3000, horizontalPosition: 'center', verticalPosition: 'top'});
     return false;
   }
 

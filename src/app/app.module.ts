@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
     EmployeeTableComponent,
     EmployeeDialogFormComponent,
     LoginPageComponent,
-    LogoutDialogComponent
+    LogoutDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
