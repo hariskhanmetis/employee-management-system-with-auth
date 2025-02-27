@@ -61,18 +61,16 @@
         "category": "Manager"
       }
     ],
-    "users": [
+    "admins": [
       {
         "id": 1,
         "email": "admin@example.com",
-        "password": "admin123",
-        "role": "admin"
+        "password": "admin123"
       },
       {
         "id": 2,
         "email": "employee@example.com",
-        "password": "employee123",
-        "role": "employee"
+        "password": "employee123"
       }
     ]
   }

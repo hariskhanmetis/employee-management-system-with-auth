@@ -33,9 +33,9 @@ export class LoginPageComponent {
 
       this.authService.login(email, password).subscribe(success => {
         if (success) {
-          this.router.navigate(['/employee-table']); 
+          this.router.navigate(['/employee-table']);
           this.snackBar.open('Login Successful!', 'Close', { duration: 3000 });
-        } 
+        }
       });
     }
   }
