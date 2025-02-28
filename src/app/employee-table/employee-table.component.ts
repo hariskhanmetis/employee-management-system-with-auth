@@ -16,20 +16,20 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
   templateUrl: './employee-table.component.html',
   styleUrls: ['./employee-table.component.css']
 })
-export class EmployeeTableComponent {
+export class EmployeeTableComponent implements OnInit, AfterViewInit {
+  employees: Employee[] = [];
+  displayedColumns: string[] = ['id', 'name', 'age', 'category', 'actions'];
+  dataSource = new MatTableDataSource<Employee>(this.employees);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   constructor(
     private employeeService: EmployeeService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private router: Router
-  ) { }
-
-  employees: Employee[] = [];
-  displayedColumns: string[] = ['id', 'name', 'age', 'category', 'actions'];
-  dataSource = new MatTableDataSource<Employee>(this.employees);
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;;
-  @ViewChild(MatSort) sort!: MatSort;
+  ) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -121,4 +121,7 @@ export class EmployeeTableComponent {
     this.openDialog('250ms', '250ms');
   }
 
+  openDetails(id: string) {
+    this.router.navigate(['employee-details', id]);
+  }
 }

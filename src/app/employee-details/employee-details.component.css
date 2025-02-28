@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+mat-card {
+    padding-bottom: 20px;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 20px;
+    margin-bottom: 60px;
+    width: 100%;
+    width: 500px;
+}
+
+button {
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+mat-card-header {
+    height: 45px;
+}
+
+mat-expansion-panel-header {
+    padding: 0 15px;
+}
+
+mat-panel-title {
+    padding-right: 20px;
+}
+
+p {
+    margin-bottom: 2px;
+}
+
+.heading {
+    padding-bottom: 0px;
+}
+
+mat-panel-description {
+    margin-right: 0px;
+}
+
+.view-details {
+    justify-content: end;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+mat-expansion-panel.mat-expanded .mat-expansion-panel-header {
+    height: 48px;
+}

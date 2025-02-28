@@ -24,6 +24,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     EmployeeDialogFormComponent,
     LoginPageComponent,
     LogoutDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     MatSelectModule,
     MatSnackBarModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

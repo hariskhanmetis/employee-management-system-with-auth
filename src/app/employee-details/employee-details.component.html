@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-accordion>
+        <mat-card>
+            <mat-card-header>
+                <div class="heading">
+                    <mat-card-title>Employee Details</mat-card-title>
+                </div>
+            </mat-card-header>
+
+            <mat-card-content>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title *ngIf="employee">
+                            {{employee.name}}
+                        </mat-panel-title>
+
+                        <mat-panel-description class="view-details"><span *ngIf="!panelOpenState">View Details</span></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <p>ID: {{employee.id}}</p>
+                    <p>Name: {{employee.name}}</p>
+                    <p>Age: {{employee.age}}</p>
+                    <p>Category: {{employee.category}}</p>
+                </mat-expansion-panel>
+            </mat-card-content>
+
+            <mat-card-actions align="start">
+                <button mat-flat-button color="primary" routerLink="/employee-table">Back to the table</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-accordion>
+</div>
