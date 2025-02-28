@@ -122,6 +122,6 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
   }
 
   openDetails(id: string) {
-    this.router.navigate(['employee-details', id]);
+    this.router.navigate(['employee/employee-details', id]);
   }
 }

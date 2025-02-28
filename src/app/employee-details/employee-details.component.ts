@@ -1,4 +1,4 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../models/employee.model';
 import { EmployeeService } from '../services/employee.service';
@@ -18,12 +18,11 @@ export class EmployeeDetailsComponent implements OnInit {
   panelOpenState = false;
 
   ngOnInit(): void {
-    console.log('Details Component Initialized!');
-    const id = this.route.snapshot.paramMap.get('id')?.toString();
+    const id = this.route.snapshot.paramMap.get('id');
     if(id) {
       this.employeeService.getEmployeeById(id).subscribe((data) => {
         this.employee = data;
-      })
+      });
     }
   }
 }

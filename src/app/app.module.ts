@@ -5,14 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { EmployeeTableComponent } from './employee-table/employee-table.component';
 import { EmployeeDialogFormComponent } from './employee-dialog-form/employee-dialog-form.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -24,18 +20,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeTableComponent,
     EmployeeDialogFormComponent,
     LoginPageComponent,
     LogoutDialogComponent,
-    DeleteDialogComponent,
-    EmployeeDetailsComponent
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +36,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
     MatDialogModule,
     MatOptionModule,
     MatFormFieldModule,
@@ -55,8 +44,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSelectModule,
     MatSnackBarModule,
     MatCardModule,
-    FormsModule,
-    MatExpansionModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

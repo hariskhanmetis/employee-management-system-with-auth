@@ -33,7 +33,7 @@ export class LoginPageComponent {
 
       this.authService.login(email, password).subscribe(success => {
         if (success) {
-          this.router.navigate(['/employee-table']);
+          this.router.navigate(['employee']);
           this.snackBar.open('Login Successful!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
         } else {
           this.snackBar.open('Please Enter Valid Credentials!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
