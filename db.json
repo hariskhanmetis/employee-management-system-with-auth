@@ -25,10 +25,10 @@
       "category": "Manager"
     },
     {
-      "id": "5774",
       "name": "Haris Khan",
       "age": 23,
-      "category": "Employee"
+      "category": "Employee",
+      "id": "5774"
     },
     {
       "id": "9953",
