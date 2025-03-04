@@ -3,33 +3,32 @@
     flex-direction: column; 
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
+    height: auto;
     padding-top: 20px; 
     text-align: center;
-    background-color: #f8f8f8;
 }
 
-h1 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #0c0c0c;
-    margin-bottom: 20px; 
-    z-index: 10;
+mat-toolbar {
+    height: 47px;
+    justify-content: space-between;
+}
+
+span {
+    font-size: 18px;
 }
 
 .wrapper {
     width: 60%;
     padding: 20px;
-    border-radius: 10px;
 }
 
 .mat-mdc-row .mat-mdc-cell {
     cursor: pointer;
-  }
-  
-  .mat-mdc-row:hover .mat-mdc-cell {
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
     background-color: #ededed;
-  }
+}
 
 mat-icon {
     cursor: pointer;
@@ -49,5 +48,19 @@ mat-icon {
 
 .button-container {
     display: flex;
-    gap: 10px; 
+    gap:20px; 
+}
+
+.spinner-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-form-field {
+    width: 100%;
+    max-width: 898px; 
+    height: 76px; 
+    margin-bottom: -25px;
 }

@@ -20,6 +20,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     MatSelectModule,
     MatSnackBarModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

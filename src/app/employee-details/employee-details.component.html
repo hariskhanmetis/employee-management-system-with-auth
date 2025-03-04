@@ -14,13 +14,17 @@
                             {{employee.name}}
                         </mat-panel-title>
 
-                        <mat-panel-description class="view-details"><span *ngIf="!panelOpenState">View Details</span></mat-panel-description>
+                        <mat-panel-description class="view-details"><span *ngIf="!panelOpenState">View
+                                Details</span></mat-panel-description>
                     </mat-expansion-panel-header>
 
-                    <p>ID: {{employee.id}}</p>
-                    <p>Name: {{employee.name}}</p>
-                    <p>Age: {{employee.age}}</p>
-                    <p>Category: {{employee.category}}</p>
+                    <p *ngIf="employee">
+                        Employee ID: {{employee.id}} | Name: {{employee.name}} | Age: {{employee.age}} | Category:
+                        {{employee.category}}.
+                        {{employee.name}} is a valuable member of our team, working in the {{employee.category}}
+                        category. With an age of {{employee.age}},
+                        {{employee.name}} brings a wealth of experience and knowledge to our organization.
+                    </p>
                 </mat-expansion-panel>
             </mat-card-content>
 

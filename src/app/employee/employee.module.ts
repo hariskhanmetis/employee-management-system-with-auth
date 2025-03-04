@@ -12,6 +12,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRippleModule } from '@angular/material/core';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 
 const routes: Routes = [
   { path: '', component: EmployeeTableComponent },
@@ -34,7 +43,16 @@ const routes: Routes = [
     MatDialogModule,
     MatSnackBarModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    MatToolbarModule,
+    MatMenuModule
   ]
 })
 export class EmployeeModule { }
