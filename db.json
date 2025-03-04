@@ -66,6 +66,11 @@
       "id": "1",
       "email": "admin@example.com",
       "password": "admin123"
+    },
+    {
+      "id": "990234",
+      "email": "haris@khan.com",
+      "password": "haris@12"
     }
   ]
 }

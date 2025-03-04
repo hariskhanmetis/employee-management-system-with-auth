@@ -22,6 +22,8 @@ import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCardModule,
     FormsModule,
     MatTooltipModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

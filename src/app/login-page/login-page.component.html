@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-tab-group mat-stretch-tabs [backgroundColor]="'primary'">
+  <mat-tab-group [backgroundColor]="'primary'">
     <mat-tab label="Login">
       <mat-card class="login-card">
         <mat-card-header>
@@ -29,14 +29,9 @@
               <mat-error *ngIf="loginForm.controls['password'].hasError('maxlength')">Password must be less than 32
                 characters</mat-error>
             </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
           </form>
         </mat-card-content>
-
-        <mat-card-footer>
-          <mat-card-actions align="start">
-            <button mat-raised-button color="primary" (click)="login()" [disabled]="loginForm.invalid">Login</button>
-          </mat-card-actions>
-        </mat-card-footer>
       </mat-card>
     </mat-tab>
     <mat-tab label="Register">
@@ -75,7 +70,7 @@
             </mat-form-field>
         
             <mat-card-actions align="start">
-              <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+              <button class="register-button" mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
             </mat-card-actions>
           </form>
         </mat-card-content>

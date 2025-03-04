@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -39,7 +39,7 @@ export class LoginPageComponent {
       this.authService.login(email, password).subscribe(success => {
         if (success) {
           this.router.navigate(['employee']);
-          this.snackBar.open('Login Successful!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+          this.snackBar.open('Login Successful!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'bottom' });
         } else {
           this.snackBar.open('Please Enter Valid Credentials!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
         }
@@ -50,15 +50,21 @@ export class LoginPageComponent {
   register(): void {
     if (this.registerForm.valid) {
       const { email, password, confirmPassword } = this.registerForm.value;
-
-      this.authService.register(email, password, confirmPassword).subscribe(success => {
+  
+      if (password !== confirmPassword) {
+        this.snackBar.open('Passwords do not match!', 'Close', { duration: 3000 });
+        return;
+      }
+  
+      this.authService.register(email, password).subscribe(success => {
         if (success) {
           this.router.navigate(['login']);
-          this.snackBar.open('User registered successfully, login now!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+          this.snackBar.open('User registered successfully, login now!', 'Close', { duration: 3000 });
         } else {
-          this.snackBar.open('Registration failed. Please try again.', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
-        } 
+          this.snackBar.open('Registration failed. Please try again.', 'Close', { duration: 3000 });
+        }
       });
     }
   }
+  
 }

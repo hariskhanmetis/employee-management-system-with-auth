@@ -5,9 +5,9 @@
     </button>
 </mat-toolbar>
 <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-        <mat-icon>delete</mat-icon>
-        <span>Delete User</span>
+    <button mat-menu-item (click)="onLogout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
     </button>
 </mat-menu>
 
@@ -15,7 +15,6 @@
 <div class="container">
     <div class="button-container">
         <button mat-raised-button color="primary" (click)="addEmployee()">Add New Employee</button>
-        <button mat-stroked-button (click)="onLogout()">Logout</button>
     </div>
 
     <div class="wrapper">
