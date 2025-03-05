@@ -8,6 +8,7 @@
   width: 11rem;
   position:fixed;
   top: 46px;
+  box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.2);
   background-color: #673ab7;
 }
 
