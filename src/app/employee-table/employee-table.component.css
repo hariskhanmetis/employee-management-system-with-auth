@@ -4,18 +4,8 @@
     align-items: center;
     justify-content: flex-start;
     height: auto;
-    padding-top: 70px;
+    padding-top: 25px;
     text-align: center;
-}
-
-mat-toolbar  {
-    height: 47px;
-    justify-content: space-between;
-    position: fixed; 
-    top: 0;
-    left: 0; 
-    right: 0; 
-    z-index: 1000; 
 }
 
 span {
@@ -23,7 +13,7 @@ span {
 }
 
 .wrapper {
-    width: 60%;
+    width: 92%;
     padding: 20px;
 }
 
@@ -53,19 +43,37 @@ mat-icon {
 
 .button-container {
     display: flex;
-    gap:20px; 
+    align-items: center;
+    justify-content: space-between;
 }
 
-.spinner-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.table-heading {
+    color: #673ab7;
+    margin-top: 12px;
+    margin-left: 20px;
+    width:610px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left; 
+}
+
+.button-container button {
+    margin-right: 16px;
+    padding: 1.2rem;
+    border:1px solid #673ab7;
+}
+
+.button-container button:hover {
+    background-color: #673ab7;
+    color: white;
 }
 
 .custom-form-field {
-    width: 100%;
-    max-width: 898px; 
-    height: 76px; 
-    margin-bottom: -25px;
+    margin-bottom: -20px;
+    flex-grow: 1;
+}
+
+.custom-form-field input {
+    margin-bottom: -20px;
+    flex-grow: 1;
 }

@@ -1,12 +1,6 @@
 {
   "employees": [
     {
-      "id": "1127",
-      "name": "Paula Rodriguez",
-      "age": 36,
-      "category": "Manager"
-    },
-    {
       "id": "7382",
       "name": "Rachel Green",
       "age": 40,

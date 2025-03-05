@@ -8,7 +8,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EmployeeDialogFormComponent } from '../employee-dialog-form/employee-dialog-form.component';
-import { LogoutDialogComponent } from '../logout-dialog/logout-dialog.component';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
@@ -100,33 +99,5 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
         });
       }
     });
-  }
-
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    const dialogRef = this.dialog.open(LogoutDialogComponent, {
-      width: '270px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log("Logout", result);
-        console.log('Logout dialog closed, proceeding with logout');
-        this.snackBar.open('Logout Successful!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
-        this.router.navigate(['/login']);
-      }
-      else {
-        console.log('Logout cancelled');
-      }
-    });
-  }
-
-  onLogout() {
-    this.openDialog('250ms', '250ms');
-  }
-
-  openDetails(id: string) {
-    this.router.navigate(['employee/employee-details', id]);
   }
 }

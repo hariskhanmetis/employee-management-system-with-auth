@@ -24,16 +24,31 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { NavComponent } from '../nav/nav.component';
+import { MatListModule } from '@angular/material/list';
+import { OverviewComponent } from '../overview/overview.component';
+import { ProjectsComponent } from '../projects/projects.component';
+import { SettingsComponent } from '../settings/settings.component';
 
 const routes: Routes = [
-  { path: '', component: EmployeeTableComponent },
-  { path: 'employee-details/:id', component: EmployeeDetailsComponent }
+  { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
+  { path: 'employee-details', component: EmployeeDetailsComponent, children: [
+    { path: '', redirectTo: 'table', pathMatch: 'full' },
+    { path: 'overview', component: OverviewComponent },
+    { path: 'projects', component: ProjectsComponent },
+    { path: 'settings', component: SettingsComponent },
+    { path: 'table', component: EmployeeTableComponent }
+  ]}
 ];
 
 @NgModule({
   declarations: [
     EmployeeTableComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    NavComponent,
+    OverviewComponent,
+        ProjectsComponent,
+        SettingsComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +73,8 @@ const routes: Routes = [
     MatMenuModule,
     MatSidenavModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatListModule
   ]
 })
 export class EmployeeModule { }

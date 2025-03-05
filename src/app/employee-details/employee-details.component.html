@@ -1,4 +1,35 @@
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>Main Menu</mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
+<app-nav></app-nav>
+
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened class="side-menu">
+        <mat-nav-list dense>
+            <mat-list-item>
+                <a [routerLink]="['table']">
+                    <mat-icon>groups</mat-icon>
+                    Employees
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['overview']">
+                    <mat-icon>dashboard</mat-icon>
+                    Overview
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['projects']">
+                    <mat-icon>work</mat-icon>
+                    Projects
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['settings']">
+                    <mat-icon>settings</mat-icon>
+                    Settings
+                </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
 </mat-drawer-container>

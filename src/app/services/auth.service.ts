@@ -16,8 +16,8 @@ export class AuthService {
     return this.http.get<Admin[]>(this.APIURL).pipe(
       map(users => {
         const user = users.find(u => u.email === email && u.password === password);
-        if (user) { 
-          this.isLoggedIn.next(true); 
+        if (user) {
+          this.isLoggedIn.next(true);
           return true;
         }
         return false;
@@ -28,7 +28,7 @@ export class AuthService {
   register(email: string, password: string): Observable<Admin> {
     const newUser: Admin = { id: this.generateId(), email, password };
     return this.http.post<Admin>(this.APIURL, newUser);
-  } 
+  }
 
   private generateId(): string {
     return Math.floor(100000 + Math.random() * 900000).toString();
@@ -38,7 +38,7 @@ export class AuthService {
     this.isLoggedIn.next(false);
     return of(false);
   }
-  
+
   getAuthState(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
   }

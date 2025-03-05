@@ -1,27 +1,17 @@
-<mat-toolbar color="primary">
-    <span>Employee Management System</span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="person-icon" aria-label="Profile">
-        <mat-icon>person</mat-icon>
-    </button>
-</mat-toolbar>
-<mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="onLogout()">
-        <mat-icon>logout</mat-icon>
-        <span>Logout</span>
-    </button>
-</mat-menu>
-
+<app-nav></app-nav>
 
 <div class="container">
     <div class="button-container">
-        <button mat-raised-button color="primary" (click)="addEmployee()">Add New Employee</button>
-    </div>
-
-    <div class="wrapper">
+        <h2 class="table-heading">Employee Management Table</h2>
+        <button mat-stroked-button color="primary" (click)="addEmployee()">Add New Employee</button>
         <mat-form-field class="custom-form-field">
             <mat-label>Search</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Har" #input>
         </mat-form-field>
+    </div>
+
+    <div class="wrapper">
+        
         <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
@@ -59,7 +49,7 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDetails(row.id)"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
         <mat-paginator [pageSize]="6" showFirstLastButtons></mat-paginator>
     </div>
