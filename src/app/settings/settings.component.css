@@ -1,0 +1,30 @@
+.side-menu {
+    width: 12.5rem;
+    position:fixed;
+    top: 46px;
+    background-color: rgb(243, 242, 242);
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    margin-top: 46px;
+   
+}
+
+mat-icon {
+    margin-right: 7px;
+  }
+  
+  mat-list-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-list-item a {
+    font-style: italic;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
