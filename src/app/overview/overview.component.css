@@ -1,0 +1,5 @@
+mat-card {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+}
+

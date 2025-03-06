@@ -23,11 +23,11 @@ export class OverviewComponent implements AfterViewInit, OnDestroy {
 
   fetchData() {
     this.http.get<Employee[]>('http://localhost:3000/employees').subscribe(data => {
-      this.createChart(data);
+      this.createPieChart(data);
     });
   }
 
-  createChart(employees: Employee[]) {
+  createPieChart(employees: Employee[]) {
     am4core.useTheme(am4themes_animated);
     const categoryCounts: { [key: string]: number } = {};
   
@@ -40,6 +40,7 @@ export class OverviewComponent implements AfterViewInit, OnDestroy {
       count
     }));
   
+    
     let chart = am4core.create(this.chartDiv.nativeElement, am4charts.PieChart);
     chart.data = chartData;
   
@@ -50,11 +51,13 @@ export class OverviewComponent implements AfterViewInit, OnDestroy {
     pieSeries.slices.template.strokeOpacity = 1;
   
     pieSeries.hiddenState.properties.opacity = 1;
-    pieSeries.hiddenState.properties.endAngle = -90;
-    pieSeries.hiddenState.properties.startAngle = -90;
-    chart.hiddenState.properties.radius = am4core.percent(0);
+    pieSeries.labels.template.fontSize = 12;
+
+    chart.hiddenState.properties.radius = am4core.percent(90);
   
     this.chart = chart;
+    this.chart.logo.disabled = true;
+
   }
   
 
