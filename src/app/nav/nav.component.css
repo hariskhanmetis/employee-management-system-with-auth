@@ -9,5 +9,6 @@ mat-toolbar  {
 }
 
 span {
+    font-style: italic;
     font-weight: 400;
 }
