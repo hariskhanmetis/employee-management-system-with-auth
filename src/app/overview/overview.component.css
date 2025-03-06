@@ -1,5 +1,18 @@
 mat-card {
     width: calc(100% - 10px);
     height: calc(100% - 10px);
+    background-color: #f8f8f8;
+    transition: 0.2s;
+    border-radius: 0;
 }
 
+mat-card:hover {
+    background-color: #ffffff;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+}
+
+mat-grid-list {
+    margin-top: 8px;
+    margin-left: 4px;
+}

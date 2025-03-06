@@ -11,9 +11,11 @@ import { Employee } from '../models/employee.model';
   styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent implements AfterViewInit, OnDestroy {
-  private chart!: am4charts.PieChart;
+  private pieChart!: am4charts.PieChart;
+  private lollipopChart!: am4charts.XYChart;
 
   @ViewChild('chartDiv', { static: false }) chartDiv!: ElementRef;
+  @ViewChild('lollipopChartDiv', { static: false }) lollipopChartDiv!: ElementRef;
 
   constructor(private http: HttpClient) {}
 
@@ -24,47 +26,94 @@ export class OverviewComponent implements AfterViewInit, OnDestroy {
   fetchData() {
     this.http.get<Employee[]>('http://localhost:3000/employees').subscribe(data => {
       this.createPieChart(data);
+      this.createLollipopChart(data);
     });
   }
 
   createPieChart(employees: Employee[]) {
     am4core.useTheme(am4themes_animated);
     const categoryCounts: { [key: string]: number } = {};
-  
+
     for (const emp of employees) {
       categoryCounts[emp.category] = (categoryCounts[emp.category] || 0) + 1;
     }
-  
+
     const chartData = Object.entries(categoryCounts).map(([category, count]) => ({
       category,
       count
     }));
-  
-    
+
     let chart = am4core.create(this.chartDiv.nativeElement, am4charts.PieChart);
     chart.data = chartData;
-  
+
     let pieSeries = chart.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "count";
     pieSeries.dataFields.category = "category";
     pieSeries.slices.template.stroke = am4core.color("#fff");
     pieSeries.slices.template.strokeOpacity = 1;
-  
+
     pieSeries.hiddenState.properties.opacity = 1;
     pieSeries.labels.template.fontSize = 12;
-
     chart.hiddenState.properties.radius = am4core.percent(90);
-  
-    this.chart = chart;
-    this.chart.logo.disabled = true;
 
+    this.pieChart = chart;
+    this.pieChart.logo.disabled = true;
   }
-  
+
+  createLollipopChart(employees: Employee[]) {
+    am4core.useTheme(am4themes_animated);
+    const categoryCounts: { [key: string]: number } = {};
+
+    for (const emp of employees) {
+      categoryCounts[emp.category] = (categoryCounts[emp.category] || 0) + 1;
+    }
+
+    const chartData = Object.entries(categoryCounts).map(([category, count]) => ({
+      category,
+      count
+    }));
+
+    let chart = am4core.create(this.lollipopChartDiv.nativeElement, am4charts.XYChart);
+    chart.data = chartData;
+
+    let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "category";
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.grid.template.strokeDasharray = "1,4";
+    categoryAxis.renderer.labels.template.fontSize = 12;
+
+    categoryAxis.renderer.minGridDistance = 20;
+
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    valueAxis.min = 0;
+
+    let lineSeries = chart.series.push(new am4charts.ColumnSeries());
+    lineSeries.dataFields.valueY = "count";
+    lineSeries.dataFields.categoryX = "category";
+    lineSeries.columns.template.width =1;
+    
+    let circleSeries = chart.series.push(new am4charts.LineSeries());
+    circleSeries.dataFields.valueY = "count";
+    circleSeries.dataFields.categoryX = "category";
+    circleSeries.strokeWidth = 0;
+
+    let bullet = circleSeries.bullets.push(new am4charts.CircleBullet());
+    bullet.circle.radius = 7;
+    bullet.circle.stroke = am4core.color("#ffffff");
+    bullet.circle.strokeWidth = 2;
+
+    chart.cursor = new am4charts.XYCursor();
+    this.lollipopChart = chart;
+    this.lollipopChart.logo.disabled = true;
+  }
 
   ngOnDestroy() {
-    if (this.chart) {
-      this.chart.dispose();
+    if (this.pieChart) {
+      this.pieChart.dispose();
+    }
+    if (this.lollipopChart) {
+      this.lollipopChart.dispose();
     }
   }
-
 }
