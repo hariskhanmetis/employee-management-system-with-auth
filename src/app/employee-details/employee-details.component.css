@@ -22,6 +22,10 @@ mat-list-item {
   align-items: center;
 }
 
+.mat-drawer-container {
+  overflow: hidden;
+}
+
 mat-list-item a {
   color: white;
   text-decoration: none;

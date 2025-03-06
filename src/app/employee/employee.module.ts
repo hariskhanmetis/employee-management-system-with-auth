@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -32,13 +33,15 @@ import { SettingsComponent } from '../settings/settings.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
-  { path: 'employee-details', component: EmployeeDetailsComponent, children: [
-    { path: '', redirectTo: 'table', pathMatch: 'full' },
-    { path: 'overview', component: OverviewComponent },
-    { path: 'projects', component: ProjectsComponent },
-    { path: 'table', component: EmployeeTableComponent},
-    { path: 'settings', component: SettingsComponent}
-  ]},
+  {
+    path: 'employee-details', component: EmployeeDetailsComponent, children: [
+      { path: '', redirectTo: 'table', pathMatch: 'full' },
+      { path: 'overview', component: OverviewComponent },
+      { path: 'projects', component: ProjectsComponent },
+      { path: 'table', component: EmployeeTableComponent },
+      { path: 'settings', component: SettingsComponent }
+    ]
+  },
 ];
 
 @NgModule({
@@ -47,8 +50,8 @@ const routes: Routes = [
     EmployeeDetailsComponent,
     NavComponent,
     OverviewComponent,
-        ProjectsComponent,
-        SettingsComponent
+    ProjectsComponent,
+    SettingsComponent
   ],
   imports: [
     CommonModule,
@@ -74,7 +77,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatSelectModule,
     MatOptionModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ]
 })
 export class EmployeeModule { }

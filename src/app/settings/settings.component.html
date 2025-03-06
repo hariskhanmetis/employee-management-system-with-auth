@@ -1,12 +1,64 @@
 <mat-tab-group>
-    <mat-tab class="profile-information" label="Profile Information">
-        <div class="info-container">
-
+    <mat-tab label="Profile Information">
+        <div class="profile-container">
+            <img src="assets/profile-placeholder.svg" alt="Profile Picture" class="profile-img">
+            <div class="profile-details">
+                <p><strong>ID:</strong> {{ user.id }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Role:</strong> {{ user.role }}</p>
+            </div>
         </div>
     </mat-tab>
     <mat-tab class="manage-account" label="Manage Account">
         <div class="manage-container">
+            <mat-card class="manage-account-card">
+                <mat-card-header><mat-card-title>Update Admin Account Information</mat-card-title></mat-card-header>
+                
+                <mat-card-content>
+                    <form [formGroup]="infoForm" (ngSubmit)="updateAccount()">
+                        
+                        <mat-form-field appearance="outline">
+                            <mat-label>New Email</mat-label>
+                            <input matInput formControlName="email" placeholder="your@email.com" required>
+                            <mat-error *ngIf="infoForm.controls['email'].hasError('required')">
+                                Email is required
+                            </mat-error>
+                            <mat-error *ngIf="infoForm.controls['email'].hasError('email')">
+                                Enter a valid email
+                            </mat-error>
+                        </mat-form-field>
             
+                        <mat-form-field appearance="outline">
+                            <mat-label>Current Password</mat-label>
+                            <input matInput formControlName="currentPassword" [type]="hide ? 'password' : 'text'" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide">
+                                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="infoForm.controls['currentPassword'].hasError('required')">
+                                Current password is required
+                            </mat-error>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline">
+                            <mat-label>New Password</mat-label>
+                            <input matInput formControlName="newPassword" [type]="hide ? 'password' : 'text'" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide">
+                                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="infoForm.controls['newPassword'].hasError('required')">
+                                New password is required
+                            </mat-error>
+                            <mat-error *ngIf="infoForm.controls['newPassword'].hasError('minlength')">
+                                Password must be at least 6 characters
+                            </mat-error>
+                        </mat-form-field>
+            
+                        <button class="update-btn" mat-raised-button color="primary" type="submit" [disabled]="infoForm.invalid">
+                            Update Account
+                        </button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
         </div>
     </mat-tab>
 </mat-tab-group>
