@@ -36,9 +36,9 @@ const routes: Routes = [
     { path: '', redirectTo: 'table', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent },
     { path: 'projects', component: ProjectsComponent },
-    { path: 'settings', component: SettingsComponent },
-    { path: 'table', component: EmployeeTableComponent }
-  ]}
+    { path: 'table', component: EmployeeTableComponent},
+    { path: 'settings', component: SettingsComponent}
+  ]},
 ];
 
 @NgModule({

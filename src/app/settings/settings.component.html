@@ -1,21 +1,12 @@
-<mat-drawer-container class="container">
-    <mat-drawer mode="side" opened class="side-menu">
-        <mat-nav-list dense>
-            <mat-list-item>
-                <a>
-                    <mat-icon>settings_accessibility</mat-icon>
-                    Profile Information
-                </a>
-            </mat-list-item>
-            <mat-list-item>
-                <a>
-                    <mat-icon>manage_accounts</mat-icon>
-                    Manage Account
-                </a>
-            </mat-list-item>
-        </mat-nav-list>
-    </mat-drawer>
-    <mat-drawer-content>
-        Hello
-    </mat-drawer-content>
-</mat-drawer-container>
+<mat-tab-group>
+    <mat-tab class="profile-information" label="Profile Information">
+        <div class="info-container">
+
+        </div>
+    </mat-tab>
+    <mat-tab class="manage-account" label="Manage Account">
+        <div class="manage-container">
+            
+        </div>
+    </mat-tab>
+</mat-tab-group>
