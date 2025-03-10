@@ -1,8 +1,13 @@
 <mat-toolbar color="primary">
     <span>Employee Management System</span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="person-icon" aria-label="Profile">
-        <mat-icon>person</mat-icon>
-    </button>
+    <div class="icons">
+        <button mat-icon-button>
+            <mat-icon class="notifi" matBadge="7" matBadgeColor="warn" matBadgeSize="small">notifications</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="person-icon" aria-label="Profile">
+            <mat-icon>person</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
 <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="onLogout()">

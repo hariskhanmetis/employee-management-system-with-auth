@@ -77,10 +77,4 @@ mat-icon {
 
 .custom-form-field {
     margin-bottom: -20px;
-    flex-grow: 1;
-}
-
-.custom-form-field input {
-    margin-bottom: -20px;
-    flex-grow: 1;
 }

@@ -12,8 +12,7 @@ body {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #121212;
-    color: white;
+    background-color: #1d1d1d;
 }
 
 body.dark-mode .mat-drawer {
@@ -39,4 +38,8 @@ body.dark-mode .table-heading {
 
 body.dark-mode .edit-button {
     color: black;
+}
+
+body.dark-mode .button-container button {
+    border-color: black;
 }

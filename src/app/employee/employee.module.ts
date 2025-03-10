@@ -29,7 +29,8 @@ import { NavComponent } from '../nav/nav.component';
 import { MatListModule } from '@angular/material/list';
 import { OverviewComponent } from '../overview/overview.component';
 import { SettingsComponent } from '../settings/settings.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -77,7 +78,8 @@ const routes: Routes = [
     MatOptionModule,
     MatListModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatBadgeModule
   ]
 })
 export class EmployeeModule { }

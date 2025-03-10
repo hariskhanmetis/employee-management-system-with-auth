@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   {
     path: 'employee',
-    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule), canActivate: [authGuard]
   }
 ];
 
@@ -16,4 +16,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
