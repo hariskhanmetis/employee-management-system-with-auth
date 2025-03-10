@@ -1,12 +1,12 @@
 <mat-tab-group>
     <mat-tab label="Profile Information">
         <div class="profile-container">
-            <img src="assets/profile-placeholder.svg" alt="Profile Picture" class="profile-img">
-            <div class="profile-details">
+            <img src="assets/2606572_5907.svg" alt="Profile Picture" class="profile-img">
+            <div *ngIf="user">
                 <p><strong>ID:</strong> {{ user.id }}</p>
                 <p><strong>Email:</strong> {{ user.email }}</p>
-                <p><strong>Role:</strong> {{ user.role }}</p>
-            </div>
+                <p><strong>Role:</strong> Admin</p>
+              </div>
         </div>
     </mat-tab>
     <mat-tab class="manage-account" label="Manage Account">

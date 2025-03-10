@@ -1,26 +1,26 @@
 .profile-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
     padding: 20px;
+    margin: 20px;
 }
 
 .profile-img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Makes image circular */
-    border: 3px solid #673AB7; /* Purple border */
-    object-fit: cover; /* Ensures the image is contained */
+    border-radius: 50%; 
+    border: 3px solid #673AB7; 
+    object-fit: cover;
     margin-bottom: 15px;
 }
 
 .profile-details p {
-    font-size: 16px;
+    font-size: 17px;
     margin: 5px 0;
     color: #333;
 }
-
 
 .manage-container {
     display: flex;
@@ -41,13 +41,12 @@ mat-tab-group {
 }
 
 .manage-account-card {
-    width: 99%;
+    width: 95%;
     border-radius: 0px;
     padding: 11px;
     padding-top: 5px;
     text-align: left;
     height: auto;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 8em;
 }
 

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Admin } from '../models/admin.model';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-settings',
@@ -13,40 +14,31 @@ import { Admin } from '../models/admin.model';
 export class SettingsComponent implements OnInit {
   hide = true;
   infoForm!: FormGroup;
-  user: Admin [] = [];
+  user!: Admin;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private snackBar: MatSnackBar
-  ) {}
+    private snackBar: MatSnackBar,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
-    this.getUserInfo(); 
     this.infoForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       currentPassword: ['', [Validators.required, Validators.minLength(6)]],
       newPassword: ['', [Validators.required, Validators.minLength(6)]]
     });
+
+    this.authService.getLoggedInUser().subscribe(admin => {
+      if (admin) {
+        this.user = admin;
+        this.infoForm.patchValue({ email: admin.email });
+      }
+    });
   }
 
-  getUserInfo() {
-    this.http.get<any>('http://localhost:3000/admins/') 
-      .subscribe(
-        (data) => {
-          this.user = data;
-          this.infoForm.patchValue({
-            email: this.user.email
-          });
-        },
-        (error) => {
-          console.error('Error fetching user data:', error);
-        }
-      );
-  }
-
-  // Update account information
   updateAccount() {
     if (this.infoForm.invalid) {
       return;
@@ -54,7 +46,7 @@ export class SettingsComponent implements OnInit {
 
     const updatedData = {
       email: this.infoForm.value.email,
-      password: this.infoForm.value.newPassword // Update password
+      password: this.infoForm.value.newPassword
     };
 
     this.http.put(`http://localhost:3000/users/${this.user.id}`, updatedData)

@@ -10,6 +10,7 @@ import { map, of } from 'rxjs';
 export class AuthService {
   private APIURL = 'http://localhost:3000/admins';
   public isLoggedIn = new BehaviorSubject<boolean>(false);
+  private loggedInUser = new BehaviorSubject<Admin | null>(null);
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string): Observable<boolean> {
@@ -18,6 +19,7 @@ export class AuthService {
         const user = users.find(u => u.email === email && u.password === password);
         if (user) {
           this.isLoggedIn.next(true);
+          this.loggedInUser.next(user); 
           return true;
         }
         return false;
@@ -41,5 +43,9 @@ export class AuthService {
 
   getAuthState(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
+  }
+
+  getLoggedInUser(): Observable<Admin | null> {
+    return this.loggedInUser.asObservable();
   }
 }
