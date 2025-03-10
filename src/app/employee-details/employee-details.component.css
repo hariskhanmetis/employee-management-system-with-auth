@@ -38,3 +38,8 @@ mat-list-item a {
   margin: 10px;
   margin-left: 15px;
 }
+
+.dark-mode {
+  background-color: black !important;
+  color: white !important;
+}

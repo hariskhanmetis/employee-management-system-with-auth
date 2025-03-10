@@ -213,8 +213,8 @@
   ],
   "admins": [
     {
-      "email": "new.admin@example.com",
-      "password": "admin12",
+      "email": "admin@example.com",
+      "password": "admin1",
       "id": "1"
     }
   ]

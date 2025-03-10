@@ -28,7 +28,6 @@ import { MatOptionModule } from '@angular/material/core';
 import { NavComponent } from '../nav/nav.component';
 import { MatListModule } from '@angular/material/list';
 import { OverviewComponent } from '../overview/overview.component';
-import { ProjectsComponent } from '../projects/projects.component';
 import { SettingsComponent } from '../settings/settings.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
@@ -38,7 +37,6 @@ const routes: Routes = [
     path: 'employee-details', component: EmployeeDetailsComponent, children: [
       { path: '', redirectTo: 'table', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
-      { path: 'projects', component: ProjectsComponent },
       { path: 'table', component: EmployeeTableComponent },
       { path: 'settings', component: SettingsComponent }
     ]
@@ -51,7 +49,6 @@ const routes: Routes = [
     EmployeeDetailsComponent,
     NavComponent,
     OverviewComponent,
-    ProjectsComponent,
     SettingsComponent
   ],
   imports: [

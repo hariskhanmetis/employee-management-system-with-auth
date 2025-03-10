@@ -24,6 +24,7 @@ h1 {
     font-size: 2rem;
     font-weight: 600;
     font-style: italic;
+    letter-spacing: 1px;
 }
 
 mat-card-title {
