@@ -2,3 +2,37 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Default Light Mode */
+body {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  body.dark-mode .mat-drawer {
+    background-color: #000000 !important;
+  }
+  
+  body.dark-mode .mat-toolbar {
+    background-color: black !important;
+    color: white !important;
+  }
+  
+  body.dark-mode .mat-list-item a {
+    color: white !important;
+  }
+  
+  body.dark-mode .mat-slide-toggle-thumb {
+    background-color: white !important;
+  }
+  
+  body.dark-mode .mat-slide-toggle-bar {
+    background-color: gray !important;
+  }
+  

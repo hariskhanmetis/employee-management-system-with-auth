@@ -30,6 +30,7 @@ import { MatListModule } from '@angular/material/list';
 import { OverviewComponent } from '../overview/overview.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { SettingsComponent } from '../settings/settings.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -78,7 +79,8 @@ const routes: Routes = [
     MatSelectModule,
     MatOptionModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule
   ]
 })
 export class EmployeeModule { }

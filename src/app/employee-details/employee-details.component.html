@@ -22,16 +22,13 @@
                 </a>
             </mat-list-item>
             <mat-list-item>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                        <mat-icon>settings</mat-icon>
-                        <span>Logout</span>
-                    </button>
-                </mat-menu>
                 <a [routerLink]="['settings']">
                     <mat-icon>settings</mat-icon>
                     Settings      
                 </a>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-slide-toggle color="warn" class="toggle" [checked]="isDarkMode" (change)="toggleDarkMode()">Enable Dark Mode</mat-slide-toggle>
             </mat-list-item>
         </mat-nav-list>
     </mat-drawer>

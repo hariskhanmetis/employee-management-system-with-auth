@@ -213,9 +213,9 @@
   ],
   "admins": [
     {
-      "id": "1",
-      "email": "admin@example.com",
-      "password": "admin123"
+      "email": "new.admin@example.com",
+      "password": "admin12",
+      "id": "1"
     }
   ]
 }

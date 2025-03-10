@@ -40,25 +40,27 @@ export class SettingsComponent implements OnInit {
   }
 
   updateAccount() {
-    if (this.infoForm.invalid) {
+    if (!this.user?.id) {
+      console.error('User ID is missing');
+      this.snackBar.open('User not found!', 'Close', { duration: 3000 });
       return;
     }
-
+  
     const updatedData = {
       email: this.infoForm.value.email,
       password: this.infoForm.value.newPassword
     };
-
-    this.http.put(`http://localhost:3000/users/${this.user.id}`, updatedData)
+  
+    this.http.put(`http://localhost:3000/admins/${this.user.id}`, updatedData)
       .subscribe(
-        () => {
-          this.snackBar.open('Account updated successfully!', 'Close', { duration: 3000 });
-          this.router.navigate(['/employee-details']);
-        },
-        (error) => {
+        () => this.snackBar.open('Account updated successfully!', 'Close', { duration: 3000 }),
+        error => {
           console.error('Error updating account:', error);
           this.snackBar.open('Error updating account. Try again!', 'Close', { duration: 3000 });
         }
       );
+
+   console.log("New credentials: ", updatedData);
   }
+  
 }

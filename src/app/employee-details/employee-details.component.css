@@ -33,3 +33,8 @@ mat-list-item a {
   align-items: center;
   font-size: 15px;
 }
+
+.toogle {
+  margin: 10px;
+  margin-left: 15px;
+}

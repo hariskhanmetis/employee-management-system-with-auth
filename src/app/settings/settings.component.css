@@ -14,10 +14,16 @@
     border: 3px solid #673AB7; 
     object-fit: cover;
     margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out; 
 }
 
+.profile-img:hover {
+    transform: scale(1.1); 
+}
+
+
 .profile-details p {
-    font-size: 17px;
+    font-size: 20px;
     margin: 5px 0;
     color: #333;
 }
