@@ -1,20 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { LogoutDialogComponent } from '../logout-dialog/logout-dialog.component';
 import { Router } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
+  notifications: string[] = [];
+
   constructor (
+    private notificationService: NotificationService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    this.notificationService.getNotifications().subscribe(notifications => {
+      this.notifications = notifications;
+    });
+  }
+
+  clearNotifications() {
+    this.notificationService.clearNotifications();
+  }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     const dialogRef = this.dialog.open(LogoutDialogComponent, {

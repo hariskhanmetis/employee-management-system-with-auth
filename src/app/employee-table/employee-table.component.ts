@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EmployeeDialogFormComponent } from '../employee-dialog-form/employee-dialog-form.component';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-employee-table',
@@ -25,6 +26,7 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
 
   constructor(
     private employeeService: EmployeeService,
+    private notificationService: NotificationService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private router: Router
@@ -57,7 +59,8 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
       if (result) {
         this.employeeService.addEmployee(result).subscribe(() => {
           this.loadUsers();
-          this.snackBar.open('User added successfully!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+          this.snackBar.open('User added successfully!', 'Close', { duration: 3000, horizontalPosition: 'left', verticalPosition: 'bottom' });
+          this.notificationService.addNotification(`✅ New Employee "${result.name}" has been added!`);
           console.log("User added successfully!");
         });
       }
@@ -73,7 +76,8 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
       if (result) {
         this.employeeService.updateEmployee(result).subscribe(() => {
           this.loadUsers();
-          this.snackBar.open('User updated successfully!', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+          this.snackBar.open('User updated successfully!', 'Close', { duration: 3000, horizontalPosition: 'left', verticalPosition: 'bottom' });
+          this.notificationService.addNotification(`✏️ Employee "${result.name}" has been updated!`);
           console.log("Employee updated successfully!");
         });
       }
@@ -90,11 +94,13 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
         this.employeeService.deleteEmployee(id).subscribe({
           next: () => {
             this.loadUsers();
-            this.snackBar.open('User deleted successfully', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+            this.snackBar.open('User deleted successfully', 'Close', { duration: 3000, horizontalPosition: 'left', verticalPosition: 'bottom' });
+            this.notificationService.addNotification(`🗑️ Employee with ID: ${id} has been deleted!`);
+
           },
           error: (error) => {
             console.error('Error deleting employee:', error);
-            this.snackBar.open('Error deleting user. Please try again.', 'Close', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top' });
+            this.snackBar.open('Error deleting user. Please try again.', 'Close', { duration: 3000, horizontalPosition: 'left', verticalPosition: 'bottom' });
           }
         });
       }

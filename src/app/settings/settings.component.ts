@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Admin } from '../models/admin.model';
 import { AuthService } from '../services/auth.service';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-settings',
@@ -21,7 +22,8 @@ export class SettingsComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private snackBar: MatSnackBar,
-    private authService: AuthService
+    private authService: AuthService,
+    private notificationService: NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -52,15 +54,12 @@ export class SettingsComponent implements OnInit {
     };
   
     this.http.put(`http://localhost:3000/admins/${this.user.id}`, updatedData)
-      .subscribe(
-        () => this.snackBar.open('Account updated successfully!', 'Close', { duration: 3000 }),
-        error => {
-          console.error('Error updating account:', error);
-          this.snackBar.open('Error updating account. Try again!', 'Close', { duration: 3000 });
-        }
-      );
-
-   console.log("New credentials: ", updatedData);
+    .subscribe(() => {
+      this.notificationService.addNotification(`👨‍💼 Admin account's credentials have been updated`);
+      this.snackBar.open('Account updated successfully!', 'Close', { duration: 3000 });
+    }, error => {
+      console.error('Error updating account:', error);
+      this.snackBar.open('Error updating account. Try again!', 'Close', { duration: 3000 });
+    });
   }
-  
 }
