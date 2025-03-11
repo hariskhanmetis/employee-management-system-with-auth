@@ -33,13 +33,43 @@ body.dark-mode .profile-img {
 }
 
 body.dark-mode .table-heading {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
-body.dark-mode .edit-button {
-    color: black;
+body.dark-mode .container {
+    background-color:#3b3b3b !important;
 }
 
-body.dark-mode .button-container button {
-    border-color: black;
+body.dark-mode table .mat-row:hover {
+    background-color: transparent !important;
+  }
+
+body.dark-mode table {
+    background-color: #696969 !important;
+}
+
+body.dark-mode mat-paginator {
+    background-color: #696969 !important;
+    color: rgb(0, 0, 0);;
+}
+
+body.dark-mode th {
+    color: rgb(0, 0, 0);
+}
+
+body.dark-mode td {
+    color: rgb(0, 0, 0);;
+}
+
+body.dark-mode mat-sort {
+    color: white;
+}
+
+body.dark-mode .container .button-container button {
+    color: white;
+    border-color: #696969;
+}
+
+body.dark-mode .container .button-container button:hover {
+    background-color: #696969;
 }

@@ -21,10 +21,10 @@
       <mat-form-field class="small-field" appearance="outline">
         <mat-label>Category</mat-label>
         <mat-select formControlName="category" id="category">
-          <mat-option value="Manager">Director</mat-option>
+          <mat-option value="Director">Director</mat-option>
           <mat-option value="Employee">Employee</mat-option>
           <mat-option value="Manager">Manager</mat-option>
-          <mat-option value="Manager">Intern</mat-option>
+          <mat-option value="Intern">Intern</mat-option>
         </mat-select>
         <mat-error *ngIf="employeeForm.controls['category'].hasError('required')">Category is required</mat-error>
       </mat-form-field>

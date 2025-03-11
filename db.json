@@ -3,7 +3,7 @@
     {
       "name": "Haris Khan",
       "age": 23,
-      "category": "Employee",
+      "category": "Manager",
       "id": "5774"
     },
     {
@@ -23,12 +23,6 @@
       "name": "Ethan Rogers",
       "age": 26,
       "category": "Intern"
-    },
-    {
-      "id": "5589",
-      "name": "William Anderson",
-      "age": 50,
-      "category": "Director"
     },
     {
       "id": "7712",
@@ -163,16 +157,22 @@
       "category": "Director"
     },
     {
-      "id": "2199",
-      "name": "Chloe Young",
-      "age": 28,
-      "category": "Manager"
-    },
-    {
       "id": "4695",
       "name": "Mushtaq Ahmad",
       "age": 54,
       "category": "Manager"
+    },
+    {
+      "id": "10889",
+      "name": "Isabella Martinez",
+      "age": 22,
+      "category": "Intern"
+    },
+    {
+      "name": "Asad",
+      "age": 22,
+      "category": "Intern",
+      "id": "8147"
     }
   ],
   "admins": [
