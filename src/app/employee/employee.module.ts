@@ -31,6 +31,7 @@ import { OverviewComponent } from '../overview/overview.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
+import { authchildGuard } from '../auth/authchild.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -39,8 +40,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'table', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
       { path: 'table', component: EmployeeTableComponent },
-      { path: 'settings', component: SettingsComponent }
-    ]
+      { path: 'settings', component: SettingsComponent },
+    ], canActivateChild: [authchildGuard],
   },
 ];
 

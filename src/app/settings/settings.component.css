@@ -1,6 +1,6 @@
 .profile-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: left;
     text-align: left;
     padding: 20px;
@@ -8,17 +8,17 @@
 }
 
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 115px;
+    height: 115px;
     border-radius: 50%; 
     border: 3px solid #673AB7; 
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-right: 25px;
     transition: transform 0.3s ease-in-out; 
 }
 
 .profile-img:hover {
-    transform: scale(1.1); 
+    transform: scale(1.05); 
 }
 
 

@@ -73,3 +73,18 @@ body.dark-mode .container .button-container button {
 body.dark-mode .container .button-container button:hover {
     background-color: #696969;
 }
+
+body.dark-mode .profile-container p {
+    color: white;
+}  
+
+body.dark-mode .manage-account-card {
+    background-color: #c7c7c7;
+}
+
+body.dark-mode mat-grid-list mat-card {
+    background-color: #696969;
+}
+body.dark-mode .overview-heading {
+    color: rgb(255, 255, 255);
+}
