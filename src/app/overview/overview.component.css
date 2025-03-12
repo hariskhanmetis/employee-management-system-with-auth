@@ -30,3 +30,14 @@ h1 {
 mat-card-title {
     font-style: italic;
 }
+
+.dark {
+    background-color: #1e1e1e; /* Dark background */
+    color: white; /* Light text */
+  }
+  
+  .light {
+    background-color: white; /* Light background */
+    color: black; /* Dark text */
+  }
+  
