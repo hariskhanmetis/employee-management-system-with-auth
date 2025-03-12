@@ -27,10 +27,10 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.colorModeService.darkMode$.subscribe((mode) => {
+    this.colorModeService.getDarkMode().subscribe(mode => {
       this.isDarkMode = mode;
       document.body.classList.toggle('dark-mode', this.isDarkMode);
-    });
+    });    
 
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {

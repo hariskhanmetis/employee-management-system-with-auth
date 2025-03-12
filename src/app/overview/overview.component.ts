@@ -22,10 +22,11 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private http: HttpClient, private colorModeService: ColorModeService) {}
 
   ngOnInit() {
-    this.colorModeService.darkMode$.subscribe(mode => {
+    this.colorModeService.getDarkMode().subscribe(mode => {
       this.isDarkMode = mode;
       document.body.classList.toggle('dark-mode', this.isDarkMode);
     });
+    
     console.log(this.isDarkMode);
   }
 
