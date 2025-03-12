@@ -3,7 +3,7 @@
     {
       "name": "Haris Khan",
       "age": 23,
-      "category": "Manager",
+      "category": "Employee",
       "id": "5774"
     },
     {
@@ -25,16 +25,10 @@
       "category": "Intern"
     },
     {
-      "id": "7712",
       "name": "Isabella Brown",
-      "age": 47,
-      "category": "Director"
-    },
-    {
-      "id": "8876",
-      "name": "Daniel White",
-      "age": 29,
-      "category": "Employee"
+      "age": 42,
+      "category": "Manager",
+      "id": "7712"
     },
     {
       "id": "9901",
@@ -163,22 +157,22 @@
       "category": "Manager"
     },
     {
-      "id": "10889",
-      "name": "Isabella Martinez",
-      "age": 22,
+      "id": "8633",
+      "name": "Philp Salt",
+      "age": 21,
       "category": "Intern"
     },
     {
-      "name": "Asad",
-      "age": 22,
-      "category": "Intern",
-      "id": "8147"
+      "id": "2157",
+      "name": "Taylor Swift",
+      "age": 34,
+      "category": "Employee"
     }
   ],
   "admins": [
     {
       "email": "admin@example.com",
-      "password": "admin1",
+      "password": "admin10",
       "id": "1"
     }
   ]

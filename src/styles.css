@@ -37,28 +37,26 @@ body.dark-mode .table-heading {
 }
 
 body.dark-mode .container {
-    background-color:#3b3b3b !important;
+    background-color:#2c2c2c !important;
 }
 
-body.dark-mode table .mat-row:hover {
-    background-color: transparent !important;
-  }
+body.dark-mode .mat-mdc-row:hover .mat-mdc-cell {
+    background-color: #444 !important;
+}
+
 
 body.dark-mode table {
-    background-color: #696969 !important;
+    background-color: #363636 !important;
 }
 
 body.dark-mode mat-paginator {
-    background-color: #696969 !important;
-    color: rgb(0, 0, 0);;
+    background-color: #3f3f3f !important;
+    color: rgb(255, 255, 255);;
 }
 
+body.dark-mode td, 
 body.dark-mode th {
-    color: rgb(0, 0, 0);
-}
-
-body.dark-mode td {
-    color: rgb(0, 0, 0);;
+    color: white !important;
 }
 
 body.dark-mode mat-sort {
@@ -83,8 +81,17 @@ body.dark-mode .manage-account-card {
 }
 
 body.dark-mode mat-grid-list mat-card {
-    background-color: #696969;
+    background-color: transparent;
+    color: white;
 }
 body.dark-mode .overview-heading {
     color: rgb(255, 255, 255);
+}
+
+body.dark-mode .chart-container {
+    background-color: transparent !important;
+}
+
+body.dark-mode mat-card:hover {
+    background-color: #414141;
 }

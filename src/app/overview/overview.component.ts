@@ -1,23 +1,33 @@
-import { Component, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { Employee } from '../models/employee.model';
+import { ColorModeService } from '../services/color-mode.service';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.css']
 })
-export class OverviewComponent implements AfterViewInit, OnDestroy {
+export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   private pieChart!: am4charts.PieChart;
   private lollipopChart!: am4charts.XYChart;
+  isDarkMode = false;
 
   @ViewChild('chartDiv', { static: false }) chartDiv!: ElementRef;
   @ViewChild('lollipopChartDiv', { static: false }) lollipopChartDiv!: ElementRef;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private colorModeService: ColorModeService) {}
+
+  ngOnInit() {
+    this.colorModeService.darkMode$.subscribe(mode => {
+      this.isDarkMode = mode;
+      document.body.classList.toggle('dark-mode', this.isDarkMode);
+    });
+    console.log(this.isDarkMode);
+  }
 
   ngAfterViewInit() {
     this.fetchData();
@@ -49,11 +59,15 @@ export class OverviewComponent implements AfterViewInit, OnDestroy {
     let pieSeries = chart.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "count";
     pieSeries.dataFields.category = "category";
+    
     pieSeries.slices.template.stroke = am4core.color("#fff");
     pieSeries.slices.template.strokeOpacity = 1;
 
     pieSeries.hiddenState.properties.opacity = 1;
     pieSeries.labels.template.fontSize = 12;
+    pieSeries.labels.template.fill = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000");
+    pieSeries.ticks.template.stroke = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000");
+    
     chart.hiddenState.properties.radius = am4core.percent(90);
 
     this.pieChart = chart;
@@ -102,8 +116,17 @@ export class OverviewComponent implements AfterViewInit, OnDestroy {
     bullet.circle.radius = 7;
     bullet.circle.stroke = am4core.color("#ffffff");
     bullet.circle.strokeWidth = 2;
+    
+    valueAxis.renderer.grid.template.stroke = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000");
+    categoryAxis.renderer.grid.template.stroke = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000");
+    categoryAxis.renderer.labels.template.fill = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000");
+    valueAxis.renderer.labels.template.fill = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000"); 
 
+   
     chart.cursor = new am4charts.XYCursor();
+    let cursorColor = this.isDarkMode ? am4core.color("#ffffff") : am4core.color("#000000");
+    chart.cursor.lineX.stroke = cursorColor;
+    chart.cursor.lineY.stroke = cursorColor;
     this.lollipopChart = chart;
     this.lollipopChart.logo.disabled = true;
   }
