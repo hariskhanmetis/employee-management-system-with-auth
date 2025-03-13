@@ -192,3 +192,11 @@ body.dark-mode .mdc-text-field--filled {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
     background-color: #cbcbcb;
 }
+
+body.dark-mode .menu-toogle-btn {
+    background-color: #444444;
+}
+
+body.dark-mode .menu-toogle-btn:hover {
+    background-color: #3f3f3f;
+}
