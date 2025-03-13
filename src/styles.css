@@ -3,6 +3,12 @@
 html,
 body {
     height: 100%;
+    --mdc-filled-text-field-container-color: rgb(228, 228, 228);
+    --mdc-filled-text-field-label-text-size: 14px;
+}
+
+.mat-mdc-text-field-wrapper {
+    width: 50%;
 }
 
 body {
@@ -10,7 +16,39 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+body.dark-mode .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+   color: white;
+}
+
 /* Dark Mode Styles */
+body.dark-mode .mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: #363636;
+} 
+
+body.dark-mode .mat-mdc-dialog-container .mdc-dialog__content {
+    color: white;
+}
+
+body.dark-mode .mat-mdc-select-value-text {
+    color: white;
+}
+
+body.dark-mode .mat-mdc-select-arrow {
+    color: white;
+}
+
+body.dark-mode .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+    color: white;
+}
+
+body.dark-mode .mdc-button__label {
+    color: white;
+}
+
+body.dark-mode .mat-mdc-dialog-container .mdc-dialog__title {
+    color: white;
+}
+
 body.dark-mode {
     background-color: #1d1d1d;
 }
@@ -29,7 +67,7 @@ body.dark-mode .mat-list-item a {
 }
 
 body.dark-mode .profile-img {
-    border: 3px solid black;
+    border: 3px solid rgb(161, 161, 161);
 }
 
 body.dark-mode .table-heading {
@@ -76,10 +114,6 @@ body.dark-mode .profile-container p {
     color: white;
 }  
 
-body.dark-mode .manage-account-card {
-    background-color: #c7c7c7;
-}
-
 body.dark-mode mat-grid-list mat-card {
     background-color: transparent;
     color: white;
@@ -98,4 +132,63 @@ body.dark-mode mat-card:hover {
 
 body.dark-mode .mat-ripple-element {
     background-color: rgba(255, 255, 255, 0.3) !important;
+}   
+
+body.dark-mode .mdc-tab__text-label {
+    color: white;
+}
+
+body.dark-mode .manage-account-card:hover {
+    background-color: #464646;
+}
+
+body.dark-mode .mat-mdc-tab-header {
+    --mdc-tab-indicator-active-indicator-color: white;
+}
+
+body.dark-mode .mat-mdc-tab-header:hover {
+    --mdc-tab-indicator-active-indicator-color: white;
+}
+
+body.dark-mode .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+    --mdc-tab-indicator-active-indicator-color: #ffffff;
+    --mat-tab-header-active-label-text-color: #ffffff;
+    --mat-tab-header-active-focus-label-text-color: #ffffff;
+    --mat-tab-header-active-hover-label-text-color: #ffffff;
+    --mat-tab-header-active-focus-indicator-color: #ffffff;
+    --mat-tab-header-active-hover-indicator-color: #ffffff;
+    --mat-tab-header-inactive-hover-label-text-color: #ffffff;
+}
+
+body.dark-mode .manage-account-card {
+    background-color: #464646;
+}
+
+body.dark-mode .mat-mdc-card-title {
+    color: white;
+}
+
+body.dark-mode .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    color: white;
+}
+
+body.dark-mode .mdc-text-field--outlined {
+    --mdc-outlined-text-field-outline-width: 1px;
+    --mdc-outlined-text-field-focus-outline-width: 2px;
+    --mdc-outlined-text-field-container-shape: 1px;
+    --mdc-outlined-text-field-outline-color: rgb(212, 212, 212);
+    --mdc-outlined-text-field-focus-outline-color: white;
+    --mdc-outlined-text-field-label-text-color: white;
+}
+
+body.dark-mode .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: rgb(143, 143, 143);
+}
+
+body.dark-mode .mdc-text-field--filled {
+    --mdc-filled-text-field-focus-active-indicator-color: rgb(143, 143, 143);
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #cbcbcb;
 }

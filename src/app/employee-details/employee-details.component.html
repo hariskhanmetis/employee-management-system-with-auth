@@ -1,7 +1,7 @@
-<app-nav></app-nav>
+<app-nav (toggleDrawer)="toggleSidenav()"></app-nav>
 
-<mat-drawer-container class="container">
-    <mat-drawer mode="side" opened class="side-menu">
+<mat-drawer-container class="container" [hasBackdrop]="false">
+    <mat-drawer #drawer mode="side" opened class="side-menu">
         <mat-nav-list dense>
             <mat-list-item>
                 <a [routerLink]="['table']">
@@ -28,7 +28,9 @@
             </mat-list-item>
         </mat-nav-list>
     </mat-drawer>
+    
     <mat-drawer-content>
         <router-outlet></router-outlet>
     </mat-drawer-content>
+    
 </mat-drawer-container>

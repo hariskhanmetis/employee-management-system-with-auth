@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { LogoutDialogComponent } from '../logout-dialog/logout-dialog.component';
 import { Router } from '@angular/router';
 import { NotificationService } from '../services/notification.service';
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +14,7 @@ import { NotificationService } from '../services/notification.service';
 })
 export class NavComponent implements OnInit {
   notifications: string[] = [];
+  @Output() toggleDrawer = new EventEmitter<void>();
 
   constructor (
     private notificationService: NotificationService,

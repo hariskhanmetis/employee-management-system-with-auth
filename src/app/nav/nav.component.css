@@ -1,5 +1,5 @@
 mat-toolbar  {
-    height: 47px;
+    height: 49px;
     justify-content:space-between;
     position: fixed; 
     top: 0;
@@ -12,11 +12,21 @@ mat-toolbar  {
     font-style: italic;
     font-weight: 400;
     font-size: 17px;
-    margin-left: -10px;
+}
+
+.name-span {
+    margin-right: 54rem;
 }
 
 .notifi {
     font-size: 22px;
 }
 
+.menu-toogle-btn {
+    background-color: #7d50cd99;
+}
+
+.menu-toogle-btn:hover {
+    background-color: #512da8;
+}
 

@@ -1,4 +1,7 @@
 <mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleDrawer.emit()" class="menu-toogle-btn">
+        <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
     <span class="name-span">Employee Management System</span>
     <div class="icons">
         <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
