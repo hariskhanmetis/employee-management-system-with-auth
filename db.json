@@ -7,12 +7,6 @@
       "id": "5774"
     },
     {
-      "name": "Liam Thompson",
-      "age": 35,
-      "category": "Manager",
-      "id": "6628"
-    },
-    {
       "id": "4599",
       "name": "Jessica Evans",
       "age": 27,
@@ -31,16 +25,16 @@
       "id": "7712"
     },
     {
-      "id": "9901",
       "name": "Sophia Taylor",
       "age": 35,
-      "category": "Manager"
+      "category": "Employee",
+      "id": "9901"
     },
     {
-      "id": "6654",
       "name": "James Harris",
       "age": 30,
-      "category": "Employee"
+      "category": "Employee",
+      "id": "6654"
     },
     {
       "id": "2011",
@@ -167,6 +161,12 @@
       "name": "Taylor Swift",
       "age": 34,
       "category": "Employee"
+    },
+    {
+      "id": "8070",
+      "name": "Billie Elvish",
+      "age": 22,
+      "category": "Intern"
     }
   ],
   "admins": [

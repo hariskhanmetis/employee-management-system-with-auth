@@ -175,7 +175,6 @@ body.dark-mode .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
 body.dark-mode .mdc-text-field--outlined {
     --mdc-outlined-text-field-outline-width: 1px;
     --mdc-outlined-text-field-focus-outline-width: 2px;
-    --mdc-outlined-text-field-container-shape: 1px;
     --mdc-outlined-text-field-outline-color: rgb(212, 212, 212);
     --mdc-outlined-text-field-focus-outline-color: white;
     --mdc-outlined-text-field-label-text-color: white;

@@ -1,11 +1,19 @@
 mat-toolbar  {
     height: 49px;
-    justify-content:space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: fixed; 
     top: 0;
     left: 0; 
     right: 0; 
     z-index: 1000;
+    padding: 0 16px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
 }
 
 .span{
@@ -15,18 +23,32 @@ mat-toolbar  {
 }
 
 .name-span {
-    margin-right: 54rem;
+    margin-right: 54.2rem;
+    font-style: italic;
 }
 
 .notifi {
     font-size: 22px;
 }
 
-.menu-toogle-btn {
-    background-color: #7e51ca;
-}
-
 .menu-toogle-btn:hover {
     background-color: #512da8;
 }
 
+@media (max-width: 768px) {
+    .name-span {
+        font-size: 14px;
+        text-align: left; 
+        margin-right: auto;
+    }
+
+    .notifi {
+        font-size: 18px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .name-span {
+        display: none;
+    }
+}

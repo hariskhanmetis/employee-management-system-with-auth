@@ -73,3 +73,8 @@ mat-card-actions {
 mat-card-header {
     margin-bottom: 20px;
 }
+
+@media (maxwidth: 480px) {
+    .manage-account-card {
+    }
+}

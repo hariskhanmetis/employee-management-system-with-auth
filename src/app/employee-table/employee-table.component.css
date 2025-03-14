@@ -51,6 +51,7 @@ mat-icon {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .table-heading {
@@ -77,4 +78,46 @@ mat-icon {
 
 .custom-form-field {
     margin-bottom: -20px;
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .table-heading {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .button-container button {
+        width: 90%;
+        text-align: center;
+    }
+
+    .custom-form-field {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .custom-form-field[_ngcontent-ng-c3781462800] {
+        width: 24%;
+    }
+
+    .button-container[_ngcontent-ng-c3781462800] button[_ngcontent-ng-c3781462800] {
+        width: 30%;
+        text-align: center;
+        margin-bottom: 14px;
+    }
+
+   
+
+    .mat-mdc-row{
+        height: 20px;
+    }
+    
 }

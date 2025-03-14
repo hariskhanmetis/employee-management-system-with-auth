@@ -5,6 +5,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { Employee } from '../models/employee.model';
 import { ColorModeService } from '../services/color-mode.service';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-overview',
@@ -15,6 +16,7 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   private pieChart!: am4charts.PieChart;
   private lollipopChart!: am4charts.XYChart;
   isDarkMode = false;
+  gridCols: number = 2;
 
   @ViewChild('chartDiv', { static: false }) chartDiv!: ElementRef;
   @ViewChild('lollipopChartDiv', { static: false }) lollipopChartDiv!: ElementRef;
@@ -22,12 +24,29 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private http: HttpClient, private colorModeService: ColorModeService) {}
 
   ngOnInit() {
+    this.adjustGridCols();
+
+    console.log(this.gridCols);
+
     this.colorModeService.getDarkMode().subscribe(mode => {
       this.isDarkMode = mode;
       document.body.classList.toggle('dark-mode', this.isDarkMode);
     });
     
     console.log(this.isDarkMode);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.adjustGridCols();
+  }
+
+  adjustGridCols() {
+    if (window.innerWidth < 768) {
+      this.gridCols = 1;
+    } else {
+      this.gridCols = 2;
+    }
   }
 
   ngAfterViewInit() {

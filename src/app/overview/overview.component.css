@@ -32,12 +32,25 @@ mat-card-title {
 }
 
 .dark {
-    background-color: #1e1e1e; /* Dark background */
-    color: white; /* Light text */
-  }
-  
-  .light {
-    background-color: white; /* Light background */
-    color: black; /* Dark text */
-  }
-  
+    background-color: #1e1e1e;
+    /* Dark background */
+    color: white;
+    /* Light text */
+}
+
+.light {
+    background-color: white;
+    /* Light background */
+    color: black;
+    /* Dark text */
+}
+
+@media (max-width: 480px) {
+    #chartDiv {
+        width: 100%;
+        height: auto;
+        margin-top: 25px;
+    }
+
+    
+}
