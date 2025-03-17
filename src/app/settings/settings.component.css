@@ -75,6 +75,7 @@ mat-card-header {
 }
 
 @media (maxwidth: 480px) {
-    .manage-account-card {
+    .manage-container .ng-star-inserted {
+        height: auto !important; 
     }
 }

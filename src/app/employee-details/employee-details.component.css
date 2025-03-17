@@ -44,3 +44,11 @@ mat-list-item a {
   margin-left: 5px;
 }
 
+@media (max-width: 480px) {
+  .side-menu{
+    position: absolute;
+    top: 0%;
+  }
+
+  
+}
