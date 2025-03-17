@@ -18,19 +18,19 @@
             <mat-list-item>
                 <a [routerLink]="['settings']">
                     <mat-icon>settings</mat-icon>
-                    Settings      
+                    Settings
                 </a>
             </mat-list-item>
             <mat-list-item>
                 <mat-slide-toggle color="warn" class="toggle" [checked]="isDarkMode" (change)="toggleDarkMode()">
-                   <span class="toogle-text">  {{ isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled' }} </span>
+                    <span class="toogle-text"> {{ isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled' }} </span>
                 </mat-slide-toggle>
             </mat-list-item>
         </mat-nav-list>
     </mat-drawer>
-    
+
     <mat-drawer-content>
         <router-outlet></router-outlet>
     </mat-drawer-content>
-    
+
 </mat-drawer-container>

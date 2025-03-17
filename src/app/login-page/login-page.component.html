@@ -17,7 +17,7 @@
             <mat-form-field>
               <mat-label>Enter your password</mat-label>
               <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
-              
+
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -47,7 +47,7 @@
               <mat-error *ngIf="registerForm.controls['email'].hasError('email')">Email must be valid</mat-error>
               <mat-error *ngIf="registerForm.controls['email'].hasError('required')">Email is required</mat-error>
             </mat-form-field>
-        
+
             <mat-form-field>
               <mat-label>Enter new password</mat-label>
               <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
@@ -55,22 +55,25 @@
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
               <mat-error *ngIf="registerForm.controls['password'].hasError('required')">Password is required</mat-error>
-              <mat-error *ngIf="registerForm.controls['password'].hasError('minlength')">Must be more than 5 characters</mat-error>
+              <mat-error *ngIf="registerForm.controls['password'].hasError('minlength')">Must be more than 5
+                characters</mat-error>
             </mat-form-field>
-        
+
             <mat-form-field>
               <mat-label>Confirm password</mat-label>
               <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
               <button mat-icon-button matSuffix (click)="hide = !hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-              <mat-error *ngIf="registerForm.controls['confirmPassword'].value !== registerForm.controls['password'].value">
+              <mat-error
+                *ngIf="registerForm.controls['confirmPassword'].value !== registerForm.controls['password'].value">
                 Passwords must match
               </mat-error>
             </mat-form-field>
-        
+
             <mat-card-actions align="start">
-              <button class="register-button" mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+              <button class="register-button" mat-raised-button color="primary" type="submit"
+                [disabled]="registerForm.invalid">Register</button>
             </mat-card-actions>
           </form>
         </mat-card-content>

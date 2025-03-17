@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../models/employee.model';
 import { EmployeeService } from '../services/employee.service';
@@ -12,11 +12,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   templateUrl: './employee-details.component.html',
   styleUrls: ['./employee-details.component.css']
 })
-export class EmployeeDetailsComponent implements OnInit, AfterViewInit{
+export class EmployeeDetailsComponent implements OnInit, AfterViewInit {
   employee!: Employee;
   panelOpenState = false;
   isDarkMode = false;
-  
+
   @ViewChild('drawer') drawer!: MatDrawer;
 
   constructor(
@@ -40,7 +40,7 @@ export class EmployeeDetailsComponent implements OnInit, AfterViewInit{
     this.colorModeService.getDarkMode().subscribe(mode => {
       this.isDarkMode = mode;
       document.body.classList.toggle('dark-mode', this.isDarkMode);
-    });    
+    });
 
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
@@ -49,7 +49,7 @@ export class EmployeeDetailsComponent implements OnInit, AfterViewInit{
       });
     }
   }
-  
+
   ngAfterViewInit(): void {
     this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe(result => {
       if (result.matches) {

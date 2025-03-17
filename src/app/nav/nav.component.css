@@ -1,12 +1,12 @@
-mat-toolbar  {
+mat-toolbar {
     height: 49px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed; 
+    position: fixed;
     top: 0;
-    left: 0; 
-    right: 0; 
+    left: 0;
+    right: 0;
     z-index: 1000;
     padding: 0 16px;
 }
@@ -16,7 +16,7 @@ mat-toolbar  {
     align-items: center;
 }
 
-.span{
+.span {
     font-style: italic;
     font-weight: 400;
     font-size: 17px;
@@ -38,12 +38,12 @@ mat-toolbar  {
 @media (max-width: 768px) {
     .name-span {
         font-size: 20px;
-        text-align: left; 
+        text-align: left;
         margin-right: auto;
     }
 
     .notifi {
-        font-size: 18px; 
+        font-size: 18px;
     }
 }
 

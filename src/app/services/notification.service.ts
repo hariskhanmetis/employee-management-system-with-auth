@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NotificationService {
-  private notifications:  string[] = [];
+  private notifications: string[] = [];
   private notificationSubject = new BehaviorSubject<string[]>([]);
 
   constructor() { }

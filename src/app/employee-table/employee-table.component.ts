@@ -30,7 +30,7 @@ export class EmployeeTableComponent implements OnInit, AfterViewInit {
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadUsers();

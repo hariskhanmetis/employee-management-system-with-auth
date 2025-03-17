@@ -7,17 +7,17 @@
                 <p><strong>Email:</strong> {{ user.email }}</p>
                 <p><strong>Password:</strong> {{ user.password }}</p>
                 <p><strong>Role:</strong> Admin</p>
-              </div>
+            </div>
         </div>
     </mat-tab>
     <mat-tab class="manage-account" label="Manage Account">
         <div class="manage-container">
             <mat-card class="manage-account-card">
                 <mat-card-header><mat-card-title>Update Admin Account Information</mat-card-title></mat-card-header>
-                
+
                 <mat-card-content>
                     <form [formGroup]="infoForm" (ngSubmit)="updateAccount()">
-                        
+
                         <mat-form-field appearance="outline">
                             <mat-label>New Email</mat-label>
                             <input matInput formControlName="email" placeholder="your@email.com" required>
@@ -28,10 +28,11 @@
                                 Enter a valid email
                             </mat-error>
                         </mat-form-field>
-            
+
                         <mat-form-field appearance="outline">
                             <mat-label>Current Password</mat-label>
-                            <input matInput formControlName="currentPassword" [type]="hide ? 'password' : 'text'" required>
+                            <input matInput formControlName="currentPassword" [type]="hide ? 'password' : 'text'"
+                                required>
                             <button mat-icon-button matSuffix (click)="hide = !hide">
                                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                             </button>
@@ -39,7 +40,7 @@
                                 Current password is required
                             </mat-error>
                         </mat-form-field>
-            
+
                         <mat-form-field appearance="outline">
                             <mat-label>New Password</mat-label>
                             <input matInput formControlName="newPassword" [type]="hide ? 'password' : 'text'" required>
@@ -53,8 +54,9 @@
                                 Password must be at least 6 characters
                             </mat-error>
                         </mat-form-field>
-            
-                        <button class="update-btn" mat-raised-button color="primary" type="submit" [disabled]="infoForm.invalid">
+
+                        <button class="update-btn" mat-raised-button color="primary" type="submit"
+                            [disabled]="infoForm.invalid">
                             Update Account
                         </button>
                     </form>

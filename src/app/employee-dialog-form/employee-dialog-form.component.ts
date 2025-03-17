@@ -20,7 +20,7 @@ export class EmployeeDialogFormComponent {
 
   ngOnInit(): void {
     this.isEditMode = !!this.data;
-    
+
     this.employeeForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(4), Validators.pattern(/^[A-Za-z\s]+$/)]],
       age: ['', [Validators.required, Validators.min(18), Validators.max(60)]],
@@ -51,6 +51,6 @@ export class EmployeeDialogFormComponent {
   }
 
   private generateRandomId(): number {
-    return Math.floor(1000 + Math.random() * 9999); 
+    return Math.floor(1000 + Math.random() * 9999);
   }
 }

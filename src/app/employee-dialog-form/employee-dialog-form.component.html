@@ -6,8 +6,10 @@
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" type="name" id="name">
         <mat-error *ngIf="employeeForm.controls['name'].hasError('required')">Name is required</mat-error>
-        <mat-error *ngIf="employeeForm.controls['name'].hasError('minlength')">Name must be at least 4 characters long</mat-error>
-        <mat-error *ngIf="employeeForm.controls['name'].hasError('pattern')">Name must contain only alphabetic characters</mat-error>
+        <mat-error *ngIf="employeeForm.controls['name'].hasError('minlength')">Name must be at least 4 characters
+          long</mat-error>
+        <mat-error *ngIf="employeeForm.controls['name'].hasError('pattern')">Name must contain only alphabetic
+          characters</mat-error>
       </mat-form-field>
 
       <mat-form-field class="small-field" appearance="outline">

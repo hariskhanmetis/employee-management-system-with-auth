@@ -50,12 +50,12 @@ export class LoginPageComponent {
   register(): void {
     if (this.registerForm.valid) {
       const { email, password, confirmPassword } = this.registerForm.value;
-  
+
       if (password !== confirmPassword) {
         this.snackBar.open('Passwords do not match!', 'Close', { duration: 3000 });
         return;
       }
-  
+
       this.authService.register(email, password).subscribe(success => {
         if (success) {
           this.router.navigate(['login']);
@@ -66,5 +66,5 @@ export class LoginPageComponent {
       });
     }
   }
-  
+
 }

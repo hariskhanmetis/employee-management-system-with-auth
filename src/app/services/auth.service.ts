@@ -19,7 +19,7 @@ export class AuthService {
         const user = users.find(u => u.email === email && u.password === password);
         if (user) {
           this.isLoggedIn.next(true);
-          this.loggedInUser.next(user); 
+          this.loggedInUser.next(user);
           return true;
         }
         return false;

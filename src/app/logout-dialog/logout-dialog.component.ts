@@ -13,7 +13,7 @@ export class LogoutDialogComponent {
     private authService: AuthService,
     private router: Router,
     private dialogRef: MatDialogRef<LogoutDialogComponent>
-  ) {}
+  ) { }
 
   onLogout(): void {
     console.log('Logout button clicked');

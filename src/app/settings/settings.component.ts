@@ -47,19 +47,19 @@ export class SettingsComponent implements OnInit {
       this.snackBar.open('User not found!', 'Close', { duration: 3000 });
       return;
     }
-  
+
     const updatedData = {
       email: this.infoForm.value.email,
       password: this.infoForm.value.newPassword
     };
-  
+
     this.http.put(`http://localhost:3000/admins/${this.user.id}`, updatedData)
-    .subscribe(() => {
-      this.notificationService.addNotification(`👨‍💼 Admin account's credentials have been updated`);
-      this.snackBar.open('Account updated successfully!', 'Close', { duration: 3000 });
-    }, error => {
-      console.error('Error updating account:', error);
-      this.snackBar.open('Error updating account. Try again!', 'Close', { duration: 3000 });
-    });
+      .subscribe(() => {
+        this.notificationService.addNotification(`👨‍💼 Admin account's credentials have been updated`);
+        this.snackBar.open('Account updated successfully!', 'Close', { duration: 3000 });
+      }, error => {
+        console.error('Error updating account:', error);
+        this.snackBar.open('Error updating account. Try again!', 'Close', { duration: 3000 });
+      });
   }
 }

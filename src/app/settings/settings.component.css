@@ -10,15 +10,15 @@
 .profile-img {
     width: 115px;
     height: 115px;
-    border-radius: 50%; 
-    border: 3px solid #673AB7; 
+    border-radius: 50%;
+    border: 3px solid #673AB7;
     object-fit: cover;
     margin-right: 25px;
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
 }
 
 .profile-img:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 

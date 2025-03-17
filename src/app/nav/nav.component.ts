@@ -16,12 +16,12 @@ export class NavComponent implements OnInit {
   notifications: string[] = [];
   @Output() toggleDrawer = new EventEmitter<void>();
 
-  constructor (
+  constructor(
     private notificationService: NotificationService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.notificationService.getNotifications().subscribe(notifications => {
