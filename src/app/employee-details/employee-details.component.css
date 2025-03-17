@@ -13,7 +13,7 @@
 }
 
 mat-icon {
-  color: white;
+  color: #ffffff;
   margin-right: 7px;
 }
 
@@ -45,10 +45,5 @@ mat-list-item a {
 }
 
 @media (max-width: 480px) {
-  .side-menu{
-    position: absolute;
-    top: 0%;
-  }
-
   
 }
