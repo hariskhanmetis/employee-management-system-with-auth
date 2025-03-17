@@ -5,7 +5,7 @@
 }
 
 .side-menu {
-  width: 13rem;
+  width: 14rem;
   position:fixed;
   top: 46px;
   box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.2);
@@ -44,6 +44,8 @@ mat-list-item a {
   margin-left: 5px;
 }
 
-@media (max-width: 480px) {
-  
+@media (max-width: 598px) {
+  .side-menu {
+    width: 15rem;
+  }
 }

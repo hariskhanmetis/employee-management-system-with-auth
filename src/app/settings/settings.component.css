@@ -42,7 +42,7 @@ mat-tab-group {
 
 .info-container,
 .manage-container {
-    max-height: 100vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -75,7 +75,9 @@ mat-card-header {
 }
 
 @media (maxwidth: 480px) {
-    .manage-container .ng-star-inserted {
-        height: auto !important; 
+    .manage-container[_ngcontent-ng-c2229917883] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

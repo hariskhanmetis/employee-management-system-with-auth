@@ -5,7 +5,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { Employee } from '../models/employee.model';
 import { ColorModeService } from '../services/color-mode.service';
-import { HostListener } from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-overview',
@@ -21,12 +21,12 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('chartDiv', { static: false }) chartDiv!: ElementRef;
   @ViewChild('lollipopChartDiv', { static: false }) lollipopChartDiv!: ElementRef;
 
-  constructor(private http: HttpClient, private colorModeService: ColorModeService) {}
+  constructor(private http: HttpClient, 
+    private colorModeService: ColorModeService,
+    private breakpointObserver: BreakpointObserver,
+  ) {}
 
   ngOnInit() {
-    this.adjustGridCols();
-
-    console.log(this.gridCols);
 
     this.colorModeService.getDarkMode().subscribe(mode => {
       this.isDarkMode = mode;
@@ -36,20 +36,14 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log(this.isDarkMode);
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.adjustGridCols();
-  }
-
-  adjustGridCols() {
-    if (window.innerWidth < 768) {
-      this.gridCols = 1;
-    } else {
-      this.gridCols = 2;
-    }
-  }
-
   ngAfterViewInit() {
+    this.breakpointObserver.observe([
+      Breakpoints.XSmall, 
+      Breakpoints.Small,
+      Breakpoints.Medium
+    ]).subscribe(result => {
+      this.gridCols = result.matches ? 1 : 2;
+    });
     this.fetchData();
   }
 

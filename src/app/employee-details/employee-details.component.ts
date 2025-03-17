@@ -24,7 +24,7 @@ export class EmployeeDetailsComponent implements OnInit, AfterViewInit{
     private colorModeService: ColorModeService,
     private route: ActivatedRoute,
     private breakpointObserver: BreakpointObserver
-  ) {}
+  ) { }
 
   toggleSidenav() {
     this.drawer.toggle();

@@ -23,7 +23,7 @@ mat-toolbar  {
 }
 
 .name-span {
-    margin-right: 54.2rem;
+    margin-right: auto;
     font-style: italic;
 }
 
@@ -37,7 +37,7 @@ mat-toolbar  {
 
 @media (max-width: 768px) {
     .name-span {
-        font-size: 14px;
+        font-size: 20px;
         text-align: left; 
         margin-right: auto;
     }
