@@ -41,8 +41,8 @@ const routes: Routes = [
       { path: 'overview', component: OverviewComponent },
       { path: 'table', component: EmployeeTableComponent },
       { path: 'settings', component: SettingsComponent },
-    ]
-  },
+    ], canActivateChild: [authchildGuard]
+  }
 ];
 
 @NgModule({
