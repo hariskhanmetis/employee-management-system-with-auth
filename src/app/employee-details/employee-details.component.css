@@ -44,6 +44,10 @@ mat-list-item a {
   margin-left: 5px;
 }
 
+.active {
+  background-color: #5b2fa7;
+}
+
 @media (max-width: 598px) {
   .side-menu {
     width: 15rem;

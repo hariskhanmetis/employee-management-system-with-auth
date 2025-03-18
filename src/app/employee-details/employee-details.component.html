@@ -3,19 +3,19 @@
 <mat-drawer-container class="container" [hasBackdrop]="false">
     <mat-drawer #drawer opened class="side-menu">
         <mat-nav-list dense>
-            <mat-list-item>
+            <mat-list-item routerLinkActive="active">
                 <a [routerLink]="['table']">
                     <mat-icon>groups</mat-icon>
                     Employees
                 </a>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item routerLinkActive="active">
                 <a [routerLink]="['overview']">
                     <mat-icon>dashboard</mat-icon>
                     Overview
                 </a>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item routerLinkActive="active">
                 <a [routerLink]="['settings']">
                     <mat-icon>settings</mat-icon>
                     Settings
