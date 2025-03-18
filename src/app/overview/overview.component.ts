@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
@@ -24,6 +24,7 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private http: HttpClient,
     private colorModeService: ColorModeService,
     private breakpointObserver: BreakpointObserver,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
@@ -44,6 +45,7 @@ export class OverviewComponent implements OnInit, AfterViewInit, OnDestroy {
     ]).subscribe(result => {
       this.gridCols = result.matches ? 1 : 2;
     });
+    this.cdr.detectChanges();
     this.fetchData();
   }
 

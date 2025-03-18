@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../models/employee.model';
 import { EmployeeService } from '../services/employee.service';
@@ -23,7 +23,8 @@ export class EmployeeDetailsComponent implements OnInit, AfterViewInit {
     private employeeService: EmployeeService,
     private colorModeService: ColorModeService,
     private route: ActivatedRoute,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private cdr: ChangeDetectorRef
   ) { }
 
   toggleSidenav() {
@@ -59,6 +60,7 @@ export class EmployeeDetailsComponent implements OnInit, AfterViewInit {
         this.drawer.mode = 'side';
         this.drawer.open();
       }
+      this.cdr.detectChanges();
     });
   }
 }
