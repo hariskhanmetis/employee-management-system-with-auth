@@ -58,7 +58,7 @@ mat-icon {
     color: #673ab7;
     margin-top: 12px;
     margin-left: 20px;
-    width: 610px;
+    margin-right: 12rem;
     font-size: 28px;
     font-weight: 600;
     text-align: left;
@@ -78,13 +78,33 @@ mat-icon {
 
 .custom-form-field {
     margin-bottom: -20px;
+    margin-right: 20px;
+    
+}
+
+@media (max-width: 1260px) {
+    .table-heading {
+        margin-right: 4rem;
+    }
+}
+
+@media (max-width: 1130px) {
+    .table-heading {
+        margin-right: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    .button-container[_ngcontent-ng-c4137695427] {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 0;
+    }
+
+    .button-container[_ngcontent-ng-c4137695427] button[_ngcontent-ng-c4137695427] {
+        width: 43%;
+        text-align: center;
     }
 
     .mdc-data-table__cell,
@@ -96,14 +116,8 @@ mat-icon {
         font-size: 20px;
         text-align: center;
     }
-
-    .button-container button {
-        width: 90%;
-        text-align: center;
-    }
-
-    .custom-form-field {
-        width: 90%;
+    .custom-form-field[_ngcontent-ng-c3781462800] {
+        width: 24%;
     }
 }
 
