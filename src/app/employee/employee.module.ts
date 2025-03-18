@@ -31,6 +31,7 @@ import { OverviewComponent } from '../overview/overview.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
+import { PipesComponent } from '../pipes/pipes.component';
 import { authchildGuard } from '../auth/authchild.guard';
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
       { path: 'overview', component: OverviewComponent },
       { path: 'table', component: EmployeeTableComponent },
       { path: 'settings', component: SettingsComponent },
+      { path: 'pipes', component: PipesComponent }
     ]
   }
 ];
@@ -51,7 +53,8 @@ const routes: Routes = [
     EmployeeDetailsComponent,
     NavComponent,
     OverviewComponent,
-    SettingsComponent
+    SettingsComponent,
+    PipesComponent
   ],
   imports: [
     CommonModule,

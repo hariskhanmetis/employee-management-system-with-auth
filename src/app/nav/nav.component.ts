@@ -14,6 +14,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   notifications: string[] = [];
+  currentDate: Date = new Date();
   @Output() toggleDrawer = new EventEmitter<void>();
 
   constructor(

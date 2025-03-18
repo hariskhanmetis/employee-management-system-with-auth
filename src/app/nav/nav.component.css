@@ -11,6 +11,14 @@ mat-toolbar {
     padding: 0 16px;
 }
 
+.date {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    margin-right: 1rem;
+    margin-top: 6px;
+}
+
 .icons {
     display: flex;
     align-items: center;

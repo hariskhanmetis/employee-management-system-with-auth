@@ -21,6 +21,12 @@
                     Settings
                 </a>
             </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a [routerLink]="['pipes']">
+                    <mat-icon>polyline</mat-icon>
+                    Pipes
+                </a>
+            </mat-list-item>
             <mat-list-item>
                 <mat-slide-toggle color="warn" class="toggle" [checked]="isDarkMode" (change)="toggleDarkMode()">
                     <span class="toogle-text"> {{ isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled' }} </span>
