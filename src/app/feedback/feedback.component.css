@@ -1,17 +1,9 @@
-.mat-stepper-vertical {
-    margin-top: 5px;
-    width: 50%;
-    background-color: inherit;
-}
-
-.mat-mdc-form-field {
-    margin-top: 10px;
-}
-
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 20px;
+    height: 100vh;
 }
 
 h1 {
@@ -21,4 +13,37 @@ h1 {
     font-weight: 600;
     font-style: italic;
     letter-spacing: 1px;
+}
+
+.feedback-form {
+    width: 70%;
+    border-right: #673AB7 1px solid;
+}
+
+.feedback-list {
+    width: 30%;
+    margin: 0 15px;
+}
+
+.feedback-item {
+    background-color: #f5f5f5;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.mat-stepper-vertical {
+    margin-top: 5px;
+    width: 100%;
+    background-color: inherit;
+    height: auto;
+}
+
+.mat-mdc-form-field {
+    margin-top: 10px;
 }

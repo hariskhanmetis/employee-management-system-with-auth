@@ -178,12 +178,54 @@
   ],
   "feedbacks": [
     {
-      "name": "John Doe",
-      "feedback": "Great work environment!"
+      "id": "1a2b",
+      "name": "Alice Johnson",
+      "feedback": "The company culture here is fantastic. Everyone is supportive and willing to help each other out. I've learned so much in my time here and look forward to continuing to grow with the company."
     },
     {
-      "name": "Jane Smith",
-      "feedback": "Needs improvement in management."
+      "id": "2b3c",
+      "name": "Michael Brown",
+      "feedback": "I appreciate the flexibility in work hours and the ability to work from home when needed. It has made balancing work and personal life much easier."
+    },
+    {
+      "id": "3c4d",
+      "name": "Emily Davis",
+      "feedback": "The management team is very approachable and open to feedback. They genuinely care about the employees' well-being and career growth."
+    },
+    {
+      "id": "4d5e",
+      "name": "David Wilson",
+      "feedback": "The training programs offered here are top-notch. They have helped me improve my skills and stay updated with the latest industry trends."
+    },
+    {
+      "id": "5e6f",
+      "name": "Sarah Miller",
+      "feedback": "The office environment is very positive and motivating. The facilities are great, and the company provides all the necessary tools and resources to get the job done efficiently."
+    },
+    {
+      "id": "6f7g",
+      "name": "James Anderson",
+      "feedback": "I have been with the company for over five years, and it has been a rewarding experience. The opportunities for career advancement are excellent, and the company recognizes and rewards hard work."
+    },
+    {
+      "id": "7g8h",
+      "name": "Jessica Martinez",
+      "feedback": "The team collaboration here is amazing. We work together seamlessly to achieve our goals, and everyone is always willing to lend a hand."
+    },
+    {
+      "id": "8h9i",
+      "name": "Christopher Garcia",
+      "feedback": "The benefits package is comprehensive and competitive. It includes health insurance, retirement plans, and other perks that make working here very attractive."
+    },
+    {
+      "id": "9i0j",
+      "name": "Patricia Rodriguez",
+      "feedback": "The company is very inclusive and values diversity. It is refreshing to work in an environment where everyone is treated with respect and given equal opportunities."
+    },
+    {
+      "id": "0j1k",
+      "name": "Robert Martinez",
+      "feedback": "The leadership team is visionary and forward-thinking. They have a clear strategy for the company's future, and they communicate it effectively to all employees."
     }
   ]
 }

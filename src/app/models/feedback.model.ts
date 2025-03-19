@@ -1,4 +1,4 @@
-interface Feedback {
+export interface Feedback {
     name: string;
     feedback: string;
 }
