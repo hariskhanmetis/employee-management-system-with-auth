@@ -31,7 +31,8 @@ import { OverviewComponent } from '../overview/overview.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
-import { PipesComponent } from '../pipes/pipes.component';
+import { FeedbackComponent } from '../feedback/feedback.component';
+import {MatStepperModule} from '@angular/material/stepper';
 import { authchildGuard } from '../auth/authchild.guard';
 
 const routes: Routes = [
@@ -42,7 +43,7 @@ const routes: Routes = [
       { path: 'overview', component: OverviewComponent },
       { path: 'table', component: EmployeeTableComponent },
       { path: 'settings', component: SettingsComponent },
-      { path: 'pipes', component: PipesComponent }
+      { path: 'feedback', component: FeedbackComponent }
     ]
   }
 ];
@@ -54,7 +55,7 @@ const routes: Routes = [
     NavComponent,
     OverviewComponent,
     SettingsComponent,
-    PipesComponent
+    FeedbackComponent
   ],
   imports: [
     CommonModule,
@@ -83,7 +84,8 @@ const routes: Routes = [
     MatListModule,
     ReactiveFormsModule,
     MatSlideToggleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatStepperModule
   ]
 })
 export class EmployeeModule { }

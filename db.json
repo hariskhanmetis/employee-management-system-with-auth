@@ -175,5 +175,15 @@
       "password": "admin10",
       "id": "1"
     }
+  ],
+  "feedbacks": [
+    {
+      "name": "John Doe",
+      "feedback": "Great work environment!"
+    },
+    {
+      "name": "Jane Smith",
+      "feedback": "Needs improvement in management."
+    }
   ]
 }

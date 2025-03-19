@@ -1,0 +1,24 @@
+.mat-stepper-vertical {
+    margin-top: 5px;
+    width: 50%;
+    background-color: inherit;
+}
+
+.mat-mdc-form-field {
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #673AB7;
+    margin-left: 15px;
+    font-size: 28px;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Write your feedback here!</h1>
+    <mat-stepper orientation="vertical" #stepper>
+        <mat-step>
+            <form action="">
+                <ng-template matStepLabel>Fill out your name</ng-template>
+                <mat-form-field>
+                    <mat-label>Name:</mat-label>
+                    <input type="text" matInput placeholder="Enter your name" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form action="">
+                <ng-template matStepLabel>Write your feedback</ng-template>
+                <mat-form-field>
+                    <mat-label>Feedback:</mat-label>
+                    <textarea type="text" matInput placeholder="Enter your feedback" required></textarea>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button>Submit</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>
