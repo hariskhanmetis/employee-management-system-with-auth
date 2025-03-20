@@ -28,7 +28,7 @@
                 </a>
             </mat-list-item>
             <mat-list-item>
-                <mat-slide-toggle color="warn" class="toggle" [checked]="isDarkMode" (change)="toggleDarkMode()">
+                <mat-slide-toggle matTooltip= "{{ isDarkMode ? 'Turn off dark mode' : 'Turn on dark mode' }}" color="warn" class="toggle" [checked]="isDarkMode" (change)="toggleDarkMode()">
                     <span class="toogle-text"> {{ isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled' }} </span>
                 </mat-slide-toggle>
             </mat-list-item>

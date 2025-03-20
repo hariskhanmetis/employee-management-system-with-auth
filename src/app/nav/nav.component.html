@@ -5,7 +5,7 @@
     <span class="name-span">Employee Management System</span>
     <div class="icons">
         <h6 class="date">Current date: {{ currentDate | date }}</h6>
-        <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+        <button matTooltip="Notifications" mat-icon-button [matMenuTriggerFor]="notificationMenu">
             <mat-icon matBadge="{{ notifications.length }}" matBadgeColor="warn" matBadgeSize="small">
                 notifications
             </mat-icon>

@@ -33,6 +33,10 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.feedback-item:hover {
+    background-color: #eeeeee;
+}
+
 p {
     margin-bottom: 0px;
 }
