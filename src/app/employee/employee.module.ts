@@ -34,6 +34,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { FeedbackComponent } from '../feedback/feedback.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { authchildGuard } from '../auth/authchild.guard';
+import { HoverDirective } from '../directives/hover.directive';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -55,7 +56,8 @@ const routes: Routes = [
     NavComponent,
     OverviewComponent,
     SettingsComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    HoverDirective
   ],
   imports: [
     CommonModule,

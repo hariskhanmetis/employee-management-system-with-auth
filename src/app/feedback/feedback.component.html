@@ -1,7 +1,7 @@
 <div class="container">
     <div class="feedback-form">
       <h1>Write your feedback here</h1>
-      <mat-stepper orientation="horizontal" #stepper>
+      <mat-stepper orientation="vertical" #stepper>
         <mat-step [stepControl]="feedbackForm.get('name')!">
           <form [formGroup]="feedbackForm">
             <ng-template matStepLabel>Fill out your name</ng-template>
@@ -40,7 +40,7 @@
   
     <div class="feedback-list">
       <h1>Reviews</h1>
-      <div *ngFor="let feedback of feedbacks" class="feedback-item">
+      <div appHover *ngFor="let feedback of feedbacks" class="feedback-item">
         <strong>{{ feedback.name }}: </strong>
         <p>{{ feedback.feedback }}</p>
       </div>
