@@ -8,7 +8,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './employee-dialog-form.component.html',
   styleUrls: ['./employee-dialog-form.component.css']
 })
-export class EmployeeDialogFormComponent {
+export class EmployeeDialogFormComponent implements OnInit {
   employeeForm!: FormGroup;
   isEditMode = false;
 
