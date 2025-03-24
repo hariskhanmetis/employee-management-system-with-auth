@@ -1,17 +1,17 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appHover]'
 })
 export class HoverDirective {
-
+  @HostBinding('class.hovered') isHovered = false;
   constructor(private elr: ElementRef) { }
 
-  @HostListener('mouseenter') onMouseEnter() {
-    this.elr.nativeElement.style.backgroundColor = '#e7e6e6';
+  @HostListener('mouseover') onMouseOver() {
+    this.isHovered = true;
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.elr.nativeElement.style.backgroundColor = '#f5f5f5';
+    this.isHovered = false;
   }
 }

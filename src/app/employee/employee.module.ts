@@ -32,9 +32,10 @@ import { SettingsComponent } from '../settings/settings.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
 import { FeedbackComponent } from '../feedback/feedback.component';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { authchildGuard } from '../auth/authchild.guard';
 import { HoverDirective } from '../directives/hover.directive';
+import { WordCountPipe } from '../pipes/word-count.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -57,7 +58,8 @@ const routes: Routes = [
     OverviewComponent,
     SettingsComponent,
     FeedbackComponent,
-    HoverDirective
+    HoverDirective,
+    WordCountPipe
   ],
   imports: [
     CommonModule,

@@ -42,7 +42,8 @@
       <h1>Reviews</h1>
       <div appHover *ngFor="let feedback of feedbacks" class="feedback-item">
         <strong>{{ feedback.name }}: </strong>
-        <p>{{ feedback.feedback }}</p>
+        <p> {{ feedback.feedback }} </p>
+        <strong style="color: #673AB7;"> Total words: {{ feedback.feedback | wordCount }} </strong>
       </div>
     </div>
   </div>
