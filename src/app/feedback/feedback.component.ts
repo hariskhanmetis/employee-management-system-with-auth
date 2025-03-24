@@ -24,11 +24,11 @@ export class FeedbackComponent implements OnInit, AfterViewInit {
     if (this.feedbackForm.valid) {
       this.feedbackService.addFeedback(this.feedbackForm.value).subscribe(() => {
         this.feedbackForm.reset();
+        this.getfeedbacks();
         this.snackBar.open('Feedback submitted successfully!', 'Close', {
           duration: 2000
         });
       });
-      this.getfeedbacks();
     }
   }
 

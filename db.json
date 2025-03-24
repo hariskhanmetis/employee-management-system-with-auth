@@ -178,19 +178,9 @@
   ],
   "feedbacks": [
     {
-      "id": "1a2b",
-      "name": "Alice Johnson",
-      "feedback": "The company culture here is fantastic. Everyone is supportive and willing to help each other out. I've learned so much in my time here and look forward to continuing to grow with the company."
-    },
-    {
       "id": "2b3c",
       "name": "Michael Brown",
       "feedback": "I appreciate the flexibility in work hours and the ability to work from home when needed. It has made balancing work and personal life much easier."
-    },
-    {
-      "id": "3c4d",
-      "name": "Emily Davis",
-      "feedback": "The management team is very approachable and open to feedback. They genuinely care about the employees' well-being and career growth."
     },
     {
       "id": "4d5e",
@@ -203,9 +193,9 @@
       "feedback": "The leadership team is visionary and forward-thinking. They have a clear strategy for the company's future, and they communicate it effectively to all employees."
     },
     {
-      "id": "8f26",
-      "name": "ffgdfd",
-      "feedback": "hghjghjg"
+      "id": "9c11",
+      "name": "Haris",
+      "feedback": "Haris"
     }
   ]
 }

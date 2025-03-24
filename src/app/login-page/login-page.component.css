@@ -6,29 +6,27 @@
     background-color: rgb(243, 242, 242);
 }
 
-.login-card {
-    margin-bottom: 10px;
-    width: 500px;
-    padding: 11px;
-    padding-top: 5px;
-    text-align: left;
-    height: 19rem;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-}
-
-mat-checkbox {
-    margin-top: -10px;
-    margin-left: -9px;
-}
-
+.login-card,
 .register-card {
     margin-bottom: 10px;
     width: 500px;
     padding: 11px;
     padding-top: 5px;
+    background-color: rgb(243, 242, 242);
     text-align: left;
-    height: 24rem;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    height: 19rem; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+mat-card-content {
+    flex: 1;  
+}
+
+mat-checkbox {
+    margin-top: -10px;
+    margin-left: -9px;
 }
 
 mat-card-title {
@@ -46,6 +44,10 @@ mat-card-actions {
 
 mat-card-header {
     margin-bottom: 20px;
+}
+
+.mat-mdc-tab-group.mat-background-primary {
+    --mat-tab-header-with-background-background-color: #657787;
 }
 
 .register-button {
@@ -67,10 +69,14 @@ mat-card-header {
         margin-left: 0;
         margin-top: 10px;
     }
+
+    .login-card,
+    .register-card {
+        height: 19rem; 
+    }
 }
 
 @media (max-width: 498px) {
-  
     mat-card-title {
         font-size: 18px;
     }
@@ -83,5 +89,12 @@ mat-card-header {
     .register-button {
         margin-left: 0;
         margin-top: 10px;
+    }
+
+    .login-card,
+    .register-card {
+        height: 19rem; 
+        width: 100%;
+        margin: 0 10px;
     }
 }
