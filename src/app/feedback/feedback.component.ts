@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FeedbackService } from '../services/feedback.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Feedback } from '../models/feedback.model';
+import { CanDeactivateComponent } from '../auth/unsaved.guard';
 
 @Component({
   selector: 'app-feedback',
@@ -44,5 +45,12 @@ export class FeedbackComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.getfeedbacks();
+  }
+
+  canDeactivate(): boolean {
+    if (this.feedbackForm.dirty) {
+      return confirm('You have unsaved changes. Do you really want to leave?');
+    }
+    return true;
   }
 }

@@ -36,6 +36,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { authchildGuard } from '../auth/authchild.guard';
 import { HoverDirective } from '../directives/hover.directive';
 import { WordCountPipe } from '../pipes/word-count.pipe';
+import { unsavedChangesGuard } from '../auth/unsaved.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -44,8 +45,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'table', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
       { path: 'table', component: EmployeeTableComponent },
-      { path: 'settings', component: SettingsComponent },
-      { path: 'feedback', component: FeedbackComponent }
+      { path: 'settings', component: SettingsComponent, canDeactivate: [unsavedChangesGuard] },
+      { path: 'feedback', component: FeedbackComponent, canDeactivate: [unsavedChangesGuard] }
     ]
   }
 ];

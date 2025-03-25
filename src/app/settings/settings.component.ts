@@ -62,4 +62,11 @@ export class SettingsComponent implements OnInit {
         this.snackBar.open('Error updating account. Try again!', 'Close', { duration: 3000 });
       });
   }
+
+  canDeactivate(): boolean {
+    if (this.infoForm.dirty) {
+      return confirm('You have unsaved changes. Do you really want to leave?');
+    }
+    return true;
+  }
 }
