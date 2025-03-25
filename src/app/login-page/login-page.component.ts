@@ -67,4 +67,11 @@ export class LoginPageComponent {
     }
   }
 
+  canDeactivate(): boolean {
+    if (this.loginForm.dirty || this.registerForm.dirty) {
+      return confirm('You have unsaved changes. Do you really want to leave?');
+    }
+    return true;
+  }
+
 }
