@@ -11,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class EmployeeDialogFormComponent implements OnInit {
   employeeForm!: FormGroup;
   isEditMode = false;
+  formDirty = false;
 
   constructor(
     private fb: FormBuilder,
@@ -33,10 +34,20 @@ export class EmployeeDialogFormComponent implements OnInit {
     } else {
       console.log("Adding New Employee...");
     }
+
+    this.employeeForm.valueChanges.subscribe(() => {
+      this.formDirty = true;
+    });
   }
 
   closeDialog() {
-    this.dialogRef.close();
+    if (this.formDirty) {
+      const confirm = window.confirm('Are you sure you want to discard the changes?');
+      if (!confirm) {
+        return;
+      }
+      this.dialogRef.close();
+    }
   }
 
   saveEmployee() {
@@ -47,6 +58,7 @@ export class EmployeeDialogFormComponent implements OnInit {
     } else {
       employeeData.id = this.data.id;
     }
+    this.formDirty = false;
     this.dialogRef.close(employeeData);
   }
 
