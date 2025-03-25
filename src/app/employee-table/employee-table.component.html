@@ -5,12 +5,10 @@
     <div class="button-container">
         <h2 class="table-heading">Employee Management Table</h2>
 
-        <button class="add-btn" mat-stroked-button color="primary" (click)="addEmployee()">Add New Employee</button>
+        <button class="add-btn" mat-stroked-button color="primary" (click)="addEmployee()">Add Employee</button>
 
-        <mat-form-field class="custom-form-field">
-            <mat-label>Search</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Har" #input>
-        </mat-form-field>
+        <input (keyup)="applyFilter($event)" placeholder="Search" #input>
+    
     </div>
 
     <div class="wrapper">

@@ -31,6 +31,15 @@ span {
     background-color: #ededed;
 }
 
+input {
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #673ab7;
+    border-radius: 5px;
+    padding: 9px;
+    width: 8rem;
+}
+
 mat-icon {
     cursor: pointer;
 }
@@ -65,10 +74,13 @@ mat-icon {
 }
 
 .button-container button {
-    border-radius: 50px;
     margin-right: 16px;
-    padding: 1.2rem;
+    padding: 9px 11px;
+    width: 8rem;
     border: 1px solid #673ab7;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    font-size: 14px;
 }
 
 .button-container button:hover {
