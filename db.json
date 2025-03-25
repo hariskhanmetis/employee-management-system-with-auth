@@ -172,7 +172,7 @@
   "admins": [
     {
       "email": "admin@example.com",
-      "password": "admin10",
+      "password": "admin1",
       "id": "1"
     }
   ],
@@ -196,6 +196,11 @@
       "id": "9820",
       "name": "harus",
       "feedback": "afhgafgahd"
+    },
+    {
+      "id": "70d3",
+      "name": "Haris",
+      "feedback": "Haris"
     }
   ]
 }
