@@ -26,7 +26,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-import { LocalApiInterceptor } from './interceptors/local-api.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
@@ -60,9 +59,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MatToolbarModule,
     MatMenuModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: LocalApiInterceptor , multi: true }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

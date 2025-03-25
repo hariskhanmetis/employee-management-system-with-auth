@@ -7,12 +7,6 @@
       "id": "5774"
     },
     {
-      "id": "4599",
-      "name": "Jessica Evans",
-      "age": 27,
-      "category": "Employee"
-    },
-    {
       "id": "1123",
       "name": "Ethan Rogers",
       "age": 26,
@@ -191,16 +185,6 @@
       "id": "0j1k",
       "name": "Robert Martinez",
       "feedback": "The leadership team is visionary and forward-thinking. They have a clear strategy for the company's future, and they communicate it effectively to all employees."
-    },
-    {
-      "id": "9820",
-      "name": "harus",
-      "feedback": "afhgafgahd"
-    },
-    {
-      "id": "70d3",
-      "name": "Haris",
-      "feedback": "Haris"
     }
   ]
 }

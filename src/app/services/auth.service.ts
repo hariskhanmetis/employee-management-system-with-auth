@@ -11,7 +11,14 @@ export class AuthService {
   private APIURL = 'http://localhost:3000/admins';
   public isLoggedIn = new BehaviorSubject<boolean>(false);
   private loggedInUser = new BehaviorSubject<Admin | null>(null);
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user: Admin = JSON.parse(storedUser);
+      this.isLoggedIn.next(true);
+      this.loggedInUser.next(user);
+    }
+   }
 
   login(email: string, password: string): Observable<boolean> {
     return this.http.get<Admin[]>(this.APIURL).pipe(
@@ -20,6 +27,7 @@ export class AuthService {
         if (user) {
           this.isLoggedIn.next(true);
           this.loggedInUser.next(user);
+          localStorage.setItem('user', JSON.stringify(user));
           return true;
         }
         return false;
@@ -38,6 +46,7 @@ export class AuthService {
 
   logout(): Observable<boolean> {
     this.isLoggedIn.next(false);
+    localStorage.removeItem('user');
     return of(false);
   }
 
