@@ -27,6 +27,12 @@
                     Feedback
                 </a>
             </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a [routerLink]="['careers']">
+                    <mat-icon>work</mat-icon>
+                    Careers
+                </a>
+            </mat-list-item>
             <mat-list-item>
                 <mat-slide-toggle matTooltip= "{{ isDarkMode ? 'Turn off dark mode' : 'Turn on dark mode' }}" color="warn" class="toggle" [checked]="isDarkMode" (change)="toggleDarkMode()">
                     <span class="toogle-text"> {{ isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled' }} </span>

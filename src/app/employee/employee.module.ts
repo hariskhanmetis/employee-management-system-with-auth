@@ -37,6 +37,7 @@ import { authchildGuard } from '../auth/authchild.guard';
 import { HoverDirective } from '../directives/hover.directive';
 import { WordCountPipe } from '../pipes/word-count.pipe';
 import { unsavedChangesGuard } from '../auth/unsaved.guard';
+import { CareersComponent } from '../careers/careers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee-details', pathMatch: 'full' },
@@ -46,7 +47,8 @@ const routes: Routes = [
       { path: 'overview', component: OverviewComponent },
       { path: 'table', component: EmployeeTableComponent },
       { path: 'settings', component: SettingsComponent, canDeactivate: [unsavedChangesGuard] },
-      { path: 'feedback', component: FeedbackComponent, canDeactivate: [unsavedChangesGuard] }
+      { path: 'feedback', component: FeedbackComponent, canDeactivate: [unsavedChangesGuard] },
+      { path: 'careers', component: CareersComponent }
     ]
   }
 ];
@@ -60,7 +62,8 @@ const routes: Routes = [
     SettingsComponent,
     FeedbackComponent,
     HoverDirective,
-    WordCountPipe
+    WordCountPipe,
+    CareersComponent
   ],
   imports: [
     CommonModule,

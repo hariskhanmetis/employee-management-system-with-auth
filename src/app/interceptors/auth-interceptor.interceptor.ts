@@ -12,7 +12,12 @@ export class AuthInterceptorInterceptor implements HttpInterceptor {
 
   constructor() {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const modifiedRequest = request.clone({
+      setHeaders: {
+        'Authorization': 'Bearer my-secret-token'
+      }
+    });
+    return next.handle(modifiedRequest);
   }
 }
