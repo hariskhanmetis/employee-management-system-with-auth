@@ -1,1 +1,17 @@
-<p>careers works!</p>
+<mat-card *ngFor="let job of jobs">
+    <mat-card-header>
+        <div mat-card-avatar class="job-logo">
+            <img [src]="job.organization_logo" >
+        </div>
+        <mat-card-title><strong>Title: </strong>{{job.title}}</mat-card-title>
+        <mat-card-subtitle><strong>Organization: </strong>{{job.organization}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p><strong>Posted on: </strong>{{ job.date_posted| date:'MMMM d, y h:mm a' }}</p>
+        <p><strong>Location: </strong>{{job.addressLocality}}</p>
+        <p><strong>Organization URL: </strong>{{job.organization_url}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-stroked-button color="primary" target="_blank">Apply Now</a>
+      </mat-card-actions>
+</mat-card>

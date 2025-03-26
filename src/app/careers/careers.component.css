@@ -1,0 +1,75 @@
+mat-card {
+    margin: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+mat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.job-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+mat-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+mat-card-subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+mat-card-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+mat-card-content p strong {
+    color: #333;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+a[mat-stroked-button] {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-color: #1976d2;
+    color: #1976d2;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+a[mat-stroked-button]:hover {
+    background-color: #1976d2;
+    color: #fff;
+}
