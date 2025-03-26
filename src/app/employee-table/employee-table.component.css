@@ -35,7 +35,7 @@ input {
     outline: none;
     background-color: transparent;
     border: 1px solid #673ab7;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 9px;
     width: 8rem;
 }
@@ -78,7 +78,7 @@ mat-icon {
     padding: 9px 11px;
     width: 8rem;
     border: 1px solid #673ab7;
-    border-radius: 5px;
+    border-radius: 3px;
     letter-spacing: 0.5px;
     font-size: 14px;
 }
