@@ -1,17 +1,21 @@
-<mat-card *ngFor="let job of jobs">
-    <mat-card-header>
+<div class="job-list">
+    <mat-card *ngFor="let job of jobs" class="job-card">
+      <mat-card-header>
         <div mat-card-avatar class="job-logo">
-            <img [src]="job.organization_logo" >
+          <img [src]="job.organization_logo || 'assets/default-logo.png'" alt="Organization Logo">
         </div>
-        <mat-card-title><strong>Title: </strong>{{job.title}}</mat-card-title>
-        <mat-card-subtitle><strong>Organization: </strong>{{job.organization}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <p><strong>Posted on: </strong>{{ job.date_posted| date:'MMMM d, y h:mm a' }}</p>
-        <p><strong>Location: </strong>{{job.addressLocality}}</p>
-        <p><strong>Organization URL: </strong>{{job.organization_url}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <a mat-stroked-button color="primary" target="_blank">Apply Now</a>
+        <mat-card-title>{{ job.title }}</mat-card-title>
+        <mat-card-subtitle>{{ job.organization }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Posted on:</strong> {{ job.date_posted | date: 'MMMM d, y' }}</p>
+        <p><strong>Source:</strong>  {{ job.source }}</p>
+        <p><strong>Organization URL: </strong> 
+          <a [href]="job.organization_url" target="_blank">{{ job.organization_url }}</a>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="primary">Apply Now</button>
       </mat-card-actions>
-</mat-card>
+    </mat-card>
+  </div>

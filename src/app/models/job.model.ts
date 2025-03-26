@@ -4,6 +4,6 @@ export interface Job {
   title: string;
   organization: string;
   organization_url: string;
-  addressLocality: string;
+  source: string;
   organization_logo: string;
 }
