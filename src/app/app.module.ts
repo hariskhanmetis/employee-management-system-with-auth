@@ -29,6 +29,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorInterceptor } from './interceptors/auth-interceptor.interceptor';
 import { JobDialogueComponent } from './job-dialogue/job-dialogue.component';
+import { HttpErrorsComponent } from './http-errors/http-errors.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { JobDialogueComponent } from './job-dialogue/job-dialogue.component';
     LoginPageComponent,
     LogoutDialogComponent,
     DeleteDialogComponent,
-    JobDialogueComponent
+    JobDialogueComponent,
+    HttpErrorsComponent
   ],
   imports: [
     BrowserModule,
