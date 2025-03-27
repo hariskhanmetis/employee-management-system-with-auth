@@ -21,13 +21,12 @@ export class CareersComponent implements OnInit {
   ngOnInit(): void {
     this.jobsService.getJobs().subscribe(jobs => {
       this.jobs = jobs;
-      this.isLoading = false;
     });
   }
 
   openDialog(job: Job): void {
     this.dialog.open(JobDialogueComponent, {
-      width: '700px',
+      width: '750px',
       data: job,
       autoFocus: false
     });

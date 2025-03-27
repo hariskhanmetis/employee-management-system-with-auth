@@ -1,16 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 1.7rem;
+}
+
 mat-card {
-    margin: 20px;
-    width: 550px;
+    width: 100%;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.loading-spinner {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
 
 mat-card:hover {
     transform: translateY(-2px);
@@ -82,4 +84,17 @@ a[mat-stroked-button]:hover {
 
 a {
     color: black;
+}
+
+@media (max-width: 525px) {
+    .grid-container {
+        grid-template-columns: 1fr; 
+        padding: 0 10px; 
+        margin-top: 1.1rem;
+    }
+
+    mat-card {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
 }

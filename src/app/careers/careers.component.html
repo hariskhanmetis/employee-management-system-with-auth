@@ -1,22 +1,21 @@
-<div class="job-grid">
+<div class="grid-container">
   <mat-card *ngFor="let job of jobs" class="job-card">
-    <mat-spinner *ngIf="isLoading" class="loading-spinner"></mat-spinner>
-      <mat-card-header>
-          <div mat-card-avatar class="job-logo">
-              <img [src]="job.organization_logo || 'assets/default-logo.png'" alt="Organization Logo">
-          </div>
-          <mat-card-title>{{ job.title }}</mat-card-title>
-          <mat-card-subtitle>{{ job.organization }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p><strong>Source: </strong> {{ job.source }}</p>
-        <p><strong>Posted on:</strong> {{ job.date_posted | date: 'MMMM d, y' }}</p>
-        <p><strong>Location:</strong> {{ job.locations_derived.join(', ') }} </p>
-        
-          <p><strong>Company Description: </strong> {{ job.linkedin_org_slogan }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-          <button (click)="openDialog(job)" mat-stroked-button color="primary">View Details</button>
-      </mat-card-actions>
+    <mat-card-header>
+      <div mat-card-avatar class="job-logo">
+        <img [src]="job.organization_logo || 'assets/default-logo.png'" alt="Organization Logo">
+      </div>
+      <mat-card-title>{{ job.title }}</mat-card-title>
+      <mat-card-subtitle>{{ job.organization }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Source: </strong> {{ job.source }}</p>
+      <p><strong>Posted on:</strong> {{ job.date_posted | date: 'MMMM d, y' }}</p>
+      <p><strong>Location:</strong> {{ job.locations_derived.join(', ') }} </p>
+
+      <p><strong>Company Description: </strong> {{ job.linkedin_org_slogan }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="openDialog(job)" mat-stroked-button color="primary">View Details</button>
+    </mat-card-actions>
   </mat-card>
 </div>
