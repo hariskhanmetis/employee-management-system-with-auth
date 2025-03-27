@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService } from '../services/jobs.service';
 import { Job } from '../models/job.model';
+import { MatDialog } from '@angular/material/dialog';
+import { JobDialogueComponent } from '../job-dialogue/job-dialogue.component';
 
 @Component({
   selector: 'app-careers',
@@ -9,12 +11,25 @@ import { Job } from '../models/job.model';
 })
 export class CareersComponent implements OnInit {
   jobs: Job[] = [];
+  isLoading: boolean = true;
 
-  constructor(private jobsService: JobsService) {}
+  constructor(
+    private jobsService: JobsService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.jobsService.getJobs().subscribe(jobs => {
       this.jobs = jobs;
+      this.isLoading = false;
+    });
+  }
+
+  openDialog(job: Job): void {
+    this.dialog.open(JobDialogueComponent, {
+      width: '700px',
+      data: job,
+      autoFocus: false
     });
   }
 }

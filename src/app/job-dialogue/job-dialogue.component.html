@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{ data.title }} at {{ data.organization }}</h1>
+
+<div class="content" mat-dialog-content>
+    <p class="description"><strong>Description:</strong> {{ data.linkedin_org_description }}</p>
+
+    <p><strong>Location:</strong> {{ data.locations_derived.join(', ') }}</p>
+
+    <p><strong>Employment Type:</strong> {{ data.employment_type.join(', ') }}</p>
+
+    <p><strong>Industry:</strong> {{ data.linkedin_org_industry }}</p>
+
+    <p><strong>Company Size:</strong> {{ data.linkedin_org_size }}</p>
+
+    <p><strong>Headquarters:</strong> {{ data.linkedin_org_headquarters }}</p>
+
+    <p><strong>Followers on LinkedIn:</strong> {{ data.linkedin_org_followers | number }}</p>
+
+    <p><strong>Company Type:</strong> {{ data.linkedin_org_type }}</p>
+
+    <p><strong>Job Source:</strong> {{ data.source }}</p>
+
+    <p><strong>Posted on:</strong> {{ data.date_posted | date: 'MMMM d, y' }}</p>
+
+    <p><strong>Valid Through:</strong> {{ data.date_validthrough | date: 'MMMM d, y' }}</p>
+
+    <p>
+        <strong>Organization URL: </strong>
+        <a [href]="data.organization_url" target="_blank">{{ data.organization_url }}</a>
+    </p>
+</div>
+
+<div mat-dialog-actions class="btns">
+    <button mat-stroked-button mat-dialog-close>Close</button>
+    <a [href]="data.url"><button mat-raised-button color="primary" target="_blank">Apply Now</button></a>
+</div>

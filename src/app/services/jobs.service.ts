@@ -8,7 +8,7 @@ import { tap } from 'rxjs';
   providedIn: 'root'
 })
 export class JobsService {
-  private job_API = 'https://internships-api.p.rapidapi.com/active-jb';
+  private job_API = 'https://internships-api.p.rapidapi.com/active-jb-7d';
   private jobsKey = 'SavedJobsKey';
 
   constructor(private http: HttpClient) { }

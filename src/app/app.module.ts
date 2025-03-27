@@ -28,6 +28,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorInterceptor } from './interceptors/auth-interceptor.interceptor';
+import { JobDialogueComponent } from './job-dialogue/job-dialogue.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AuthInterceptorInterceptor } from './interceptors/auth-interceptor.inte
     EmployeeDialogFormComponent,
     LoginPageComponent,
     LogoutDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    JobDialogueComponent
   ],
   imports: [
     BrowserModule,
