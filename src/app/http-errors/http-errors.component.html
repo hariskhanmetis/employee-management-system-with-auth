@@ -1,1 +1,9 @@
-<p>http-errors works!</p>
+<h1 matDialogTitle>HTTP Error</h1>
+
+<mat-dialog-content>
+    {{data.message}}
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button matDialogClose (click)="closeDialog()">Close</button>
+</mat-dialog-actions>
