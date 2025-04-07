@@ -2,7 +2,7 @@
     <div class="feedback-form">
       <h1>Write your feedback here</h1>
       <mat-stepper orientation="vertical" #stepper>
-        <mat-step [stepControl]="feedbackForm.get('name')!">
+  \      <mat-step [stepControl]="feedbackForm.get('name')!">
           <form [formGroup]="feedbackForm">
             <ng-template matStepLabel>Fill out your name</ng-template>
             <mat-form-field>
@@ -43,7 +43,7 @@
       <div appHover *ngFor="let feedback of feedbacks" class="feedback-item">
         <strong>{{ feedback.name }}: </strong>
         <p> {{ feedback.feedback }} </p>
-        <strong style="color: #673AB7;"> Total words: {{ feedback.feedback | wordCount }} </strong>
+        <strong style="color: #673AB7;"><span> Total words: {{ feedback.feedback | wordCount }} </span></strong>
       </div>
     </div>
   </div>

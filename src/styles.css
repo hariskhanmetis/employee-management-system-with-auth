@@ -128,6 +128,51 @@ body.dark-mode .job-card {
     background-color: #3b3b3b;
 }
 
+body.dark-mode .job-card button {
+    border: white solid 1px;
+}
+
+body.dark-mode .job-card button:hover {
+    background-color: #4d4d4d;
+}
+
+body.dark-mode .feedback-form h1 {
+    color: white;
+}
+
+body.dark-mode .feedback-form mat-step-header {
+    color: white;
+}
+
+body.dark-mode .mat-step-label {
+    color: white;
+}
+
+body.dark-mode .feedback-form button {
+    border: white solid 1px;
+}
+
+body.dark-mode .feedback-form button {
+    background-color: #464646;
+} 
+
+body.dark-mode .feedback-form p {
+    color: white;
+}
+
+body.dark-mode .feedback-list h1 {
+    color: white;
+}
+
+body.dark-mode .feedback-list .feedback-item {
+    background-color: #464646;
+    color: white;
+}
+
+body.dark-mode .feedback-list .feedback-item span {
+    color: white;
+}
+
 body.dark-mode .job-card mat-card-title {
     color: white;
 }
