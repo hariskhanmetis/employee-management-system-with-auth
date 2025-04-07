@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>{{ data.title }} at {{ data.organization }}</h1>
 
-<div class="content" mat-dialog-content>
+<div class="job-content" mat-dialog-content>
     <h2 class="description">Description:</h2><p>{{ data.linkedin_org_description }}</p>
 
     <p><strong>Location:</strong> {{ data.locations_derived.join(', ') }}</p>
@@ -30,6 +30,6 @@
 </div>
 
 <div mat-dialog-actions class="btns">
-    <button mat-stroked-button mat-dialog-close>Close</button>
+    <button class="job-dialog-close" mat-stroked-button mat-dialog-close>Close</button>
     <a [href]="data.url" target="_blank"><button mat-raised-button color="primary" target="_blank">Apply Now</button></a>
 </div>

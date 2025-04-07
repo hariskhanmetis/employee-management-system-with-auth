@@ -137,7 +137,27 @@ body.dark-mode .job-card button:hover {
 }
 
 body.dark-mode .feedback-form h1 {
+    color: rgb(255, 255, 255);
+}
+
+body.dark-mode mat-drawer .active {
+    background-color: rgb(51, 51, 51);
+}
+
+body.dark-mode .job-content {
+    background-color: #3b3b3b;
+}
+
+body.dark-mode .job-dialog-close {
+    border: white solid 1px;
+}
+
+body.dark-mode .job-content p a {
     color: white;
+}
+
+body.dark-mode .filter-input {
+    border: white solid 1px;
 }
 
 body.dark-mode .feedback-form mat-step-header {
