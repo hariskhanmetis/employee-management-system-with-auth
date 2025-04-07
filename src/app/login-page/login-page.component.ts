@@ -37,6 +37,10 @@ export class LoginPageComponent {
     if (this.loginForm.valid) {
       const { email, password, rememberMe } = this.loginForm.value;
 
+      console.log('Email:', email);
+      console.log('Password:', password);
+      console.log('Remember Me:', rememberMe);
+
       if (rememberMe) {
         localStorage.setItem('rememberedEmail', email);
       } else {

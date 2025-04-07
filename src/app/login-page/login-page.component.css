@@ -38,9 +38,14 @@ mat-card-actions {
 }
 
 mat-checkbox {
-    margin-left: -9px;
+    margin-left: -10px;
     margin-top: -15px;
     margin-bottom: 10px;
+}
+
+span {
+    margin-left: -5px;
+    font-size: 13px;
 }
 
 mat-card-header {
