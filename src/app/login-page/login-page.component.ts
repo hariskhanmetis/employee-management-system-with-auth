@@ -22,7 +22,8 @@ export class LoginPageComponent {
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(32)])]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(32)])],
+      rememberMe: [false]
     });
 
     this.registerForm = this.formBuilder.group({
@@ -34,7 +35,13 @@ export class LoginPageComponent {
 
   login(): void {
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
+      const { email, password, rememberMe } = this.loginForm.value;
+
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+      } else {
+        localStorage.removeItem('rememberedEmail');
+      }
 
       this.authService.login(email, password).subscribe(success => {
         if (success) {

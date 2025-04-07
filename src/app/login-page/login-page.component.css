@@ -14,7 +14,7 @@
     padding-top: 5px;
     background-color: rgb(243, 242, 242);
     text-align: left;
-    height: 19rem; 
+    height: 21rem; 
     display: flex;
     flex-direction: column;
     overflow-y: auto; 
@@ -35,6 +35,12 @@ mat-form-field {
 
 mat-card-actions {
     margin-left: 7px;
+}
+
+mat-checkbox {
+    margin-left: -9px;
+    margin-top: -15px;
+    margin-bottom: 10px;
 }
 
 mat-card-header {

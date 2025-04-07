@@ -29,7 +29,10 @@
               <mat-error *ngIf="loginForm.controls['password'].hasError('maxlength')">Password must be less than 32
                 characters</mat-error>
             </mat-form-field>
-            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+            <mat-checkbox color="warn" formControlName="rememberMe">Remember Me</mat-checkbox>
+            <div class="btn">
+              <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+            </div>
           </form>
         </mat-card-content>
       </mat-card>
