@@ -124,6 +124,30 @@ body.dark-mode .overview-heading {
     color: rgb(255, 255, 255);
 }
 
+body.dark-mode .job-card {
+    background-color: #3b3b3b;
+}
+
+body.dark-mode .job-card mat-card-title {
+    color: white;
+}
+
+body.dark-mode .job-card mat-card-subtitle {
+    color: white;
+}
+
+body.dark-mode .job-card mat-card-content p {
+    color: white;
+}
+
+body.dark-mode .job-card mat-card-content span {
+    color: white;
+}
+
+body.dark-mode .job-card mat-card-actions {
+    color: white;
+}
+
 body.dark-mode .chart-container {
     background-color: transparent !important;
 }

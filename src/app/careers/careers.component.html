@@ -8,11 +8,11 @@
       <mat-card-subtitle>{{ job.organization }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p><strong>Source: </strong> {{ job.source }}</p>
-      <p><strong>Posted on:</strong> {{ job.date_posted | date: 'MMMM d, y' }}</p>
-      <p><strong>Location:</strong> {{ job.locations_derived.join(', ') }} </p>
+      <p><strong><span>Source: </span></strong> {{ job.source }}</p>
+      <p><strong><span>Posted on: </span></strong> {{ job.date_posted | date: 'MMMM d, y' }}</p>
+      <p><strong><span>Location: </span></strong> {{ job.locations_derived.join(', ') }} </p>
 
-      <p><strong>Company Description: </strong> {{ job.linkedin_org_slogan }}</p>
+      <p><strong><span>Company Description: </span></strong> {{ job.linkedin_org_slogan }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button (click)="openDialog(job)" mat-stroked-button>View Details</button>
