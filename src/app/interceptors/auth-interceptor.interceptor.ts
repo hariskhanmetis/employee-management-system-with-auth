@@ -36,15 +36,16 @@ export class AuthInterceptorInterceptor implements HttpInterceptor {
     );
   }
 
-  getError (error: HttpErrorResponse) {
-    if (error.status === 0) {
-      return 'Network error: Please check your internet connection.';
-    } else if (error.status === 401) {
-      return 'Unauthorized: Please log in again.';
-    } else if (error.status === 404) {
-      return 'Resource not found.';
-    } else {
-      return `Unexpected error`;
+  getError(error: HttpErrorResponse): string {
+    switch (error.status) {
+      case 0:
+        return 'Network error: Please check your internet connection.';
+      case 401:
+        return 'Unauthorized: Please log in again.';
+      case 404:
+        return 'Resource not found.';
+      default:
+        return 'Unexpected error';
     }
   }
 }
